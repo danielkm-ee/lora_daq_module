@@ -1,0 +1,12 @@
+*.o
+*.bin
+*.hex
+.env
+*.swp
+*.swo
+__pycache__/
+build
+_build
+.vscode
+*.log
+tmp/
