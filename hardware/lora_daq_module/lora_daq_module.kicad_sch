@@ -1,0 +1,260 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "3a75d17e-6505-4097-95c7-feffd430343e")
+	(paper "A4")
+	(lib_symbols)
+	(rectangle
+		(start 34.29 26.924)
+		(end 162.052 164.592)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 7826dc6e-141d-4444-9e67-3e086c9005c5)
+	)
+	(rectangle
+		(start 175.514 26.924)
+		(end 278.384 100.33)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid faaf6258-957a-45bf-93ec-f2c5c4348843)
+	)
+	(text "Main sheet"
+		(exclude_from_sim no)
+		(at 177.546 34.29 0)
+		(effects
+			(font
+				(size 6.35 6.35)
+				(color 0 0 255 1)
+			)
+			(justify left)
+		)
+		(uuid "5e576213-7b46-4bb4-83a3-b218db7e295a")
+	)
+	(text "blame: manaf alali"
+		(exclude_from_sim no)
+		(at 50.292 102.108 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "68b0e5eb-3c78-4ef9-a88e-1c87c48dd255")
+	)
+	(text "blame: saleh sabti"
+		(exclude_from_sim no)
+		(at 50.292 54.864 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "9643dcda-1044-4b8d-aa95-5d9bc0b61828")
+	)
+	(text "blame: daniel monahan"
+		(exclude_from_sim no)
+		(at 52.324 78.486 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a0c2a77a-8856-4bcb-b040-290b82bc3944")
+	)
+	(text "Sub Circuits"
+		(exclude_from_sim no)
+		(at 35.306 33.782 0)
+		(effects
+			(font
+				(size 6.35 6.35)
+				(color 0 0 255 1)
+			)
+			(justify left)
+		)
+		(uuid "df3b6320-e951-46bd-875b-10e839d58ac3")
+	)
+	(sheet
+		(at 40.386 52.578)
+		(size 113.538 14.732)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "49d314b7-6ff8-4bd4-ae0d-0515c71c4ac4")
+		(property "Sheetname" "adc"
+			(at 40.386 51.8664 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "adc.kicad_sch"
+			(at 40.386 67.8946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "lora_daq_module"
+				(path "/3a75d17e-6505-4097-95c7-feffd430343e"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 184.912 46.228)
+		(size 82.296 12.954)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "512c26a3-9fe0-46e0-b682-39a5862b731a")
+		(property "Sheetname" "main_board_v0"
+			(at 184.912 45.5164 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "main_board_v0.kicad_sch"
+			(at 184.912 59.7666 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "lora_daq_module"
+				(path "/3a75d17e-6505-4097-95c7-feffd430343e"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 40.386 75.946)
+		(size 113.538 15.494)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "b2d61906-71c1-4ea1-893f-6962d616acd4")
+		(property "Sheetname" "lora_module"
+			(at 40.386 75.2344 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "lora_module.kicad_sch"
+			(at 40.386 92.0246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "lora_daq_module"
+				(path "/3a75d17e-6505-4097-95c7-feffd430343e"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 40.64 99.822)
+		(size 113.538 15.494)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ef115c0a-04f9-49fd-8226-937092a3293c")
+		(property "Sheetname" "power_management"
+			(at 40.64 99.1104 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power_management.kicad_sch"
+			(at 40.64 115.9006 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "lora_daq_module"
+				(path "/3a75d17e-6505-4097-95c7-feffd430343e"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
