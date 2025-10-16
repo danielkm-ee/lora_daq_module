@@ -3,4 +3,5 @@ fp-info-cache
 *.pretty
 *.kicad_mod
 *.kicad_prl
-
+lora_daq_module-backups
+*-backups
