@@ -4,5 +4,12 @@
 	(generator_version "9.0")
 	(uuid "a74f7a14-530d-4456-bc3f-f2ca160ee8a8")
 	(paper "A4")
+	(title_block
+		(title "lora module subcircuit")
+		(date "2025-10-16")
+		(rev "rev0")
+		(company "ECE Capstone Team 14 at Portland State University")
+		(comment 1 "drawn by daniel monahan")
+	)
 	(lib_symbols)
 )
