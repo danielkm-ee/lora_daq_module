@@ -1,0 +1,6 @@
+fp-info-cache
+~*.lck
+*.pretty
+*.kicad_mod
+*.kicad_prl
+
