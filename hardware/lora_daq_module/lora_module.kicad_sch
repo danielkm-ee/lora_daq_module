@@ -2271,6 +2271,157 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Switch:SW_Push"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW1"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SW_Push"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Push button switch, generic, two pins"
+				(at 0.762 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Push_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -3.81 0 0)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "SW_Push_1_1"
+				(pin passive line
+					(at 3.81 0 180)
+					(length 1.27)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3.3V"
 			(power)
 			(pin_numbers
@@ -17808,6 +17959,16 @@
 		)
 		(uuid 477bf810-d6a0-4adf-be58-3b33148eb5f3)
 	)
+	(text "vdd is a regulated 3.3v output\n(the cp2102 has an ldo??!)"
+		(exclude_from_sim no)
+		(at 123.698 34.798 0)
+		(effects
+			(font
+				(size 0.8128 0.8128)
+			)
+		)
+		(uuid "0bdf0dac-abca-4b79-8015-9ebb777a9a78")
+	)
 	(text "avalanche esd \nprotection diodes"
 		(exclude_from_sim no)
 		(at 79.248 69.85 0)
@@ -17934,6 +18095,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "21906c23-02d5-4be8-b1a5-dc83a8f8fea8")
+	)
+	(junction
+		(at 85.09 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2c2d6ce0-b39d-4717-a712-a52bfad9110e")
 	)
 	(junction
 		(at 220.98 69.85)
@@ -18229,16 +18396,6 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 46.99) (xy 88.9 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "222a2c7b-001e-4e33-a2e8-b99b8643ef7b")
-	)
-	(wire
-		(pts
 			(xy 95.25 62.23) (xy 100.33 62.23)
 		)
 		(stroke
@@ -18286,6 +18443,16 @@
 			(type default)
 		)
 		(uuid "2ca7a63e-f986-4cbd-beef-864c96c5be61")
+	)
+	(wire
+		(pts
+			(xy 85.09 43.18) (xy 85.09 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36900bdf-1098-44f5-81f1-747cd7fcea49")
 	)
 	(wire
 		(pts
@@ -18489,16 +18656,6 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 46.99) (xy 85.09 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f05e9fe-5763-4629-ab48-8e02ffd30509")
-	)
-	(wire
-		(pts
 			(xy 113.03 97.79) (xy 113.03 99.06)
 		)
 		(stroke
@@ -18599,16 +18756,6 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 46.99) (xy 100.33 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8fa90c5f-8d65-4cbc-af95-09f37f702966")
-	)
-	(wire
-		(pts
 			(xy 186.69 82.55) (xy 186.69 83.82)
 		)
 		(stroke
@@ -18636,6 +18783,16 @@
 			(type default)
 		)
 		(uuid "9850dd56-4d43-4aa5-abac-46dbe49731e0")
+	)
+	(wire
+		(pts
+			(xy 85.09 48.26) (xy 85.09 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98dc6e9e-8c9d-4f86-8515-89a126e112b7")
 	)
 	(wire
 		(pts
@@ -18869,16 +19026,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 41.91) (xy 85.09 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cf4b07e1-9c99-4382-be68-795d5b3a0d99")
-	)
-	(wire
-		(pts
 			(xy 58.42 60.96) (xy 59.69 62.23)
 		)
 		(stroke
@@ -18936,6 +19083,16 @@
 			(type default)
 		)
 		(uuid "d540ab5c-2330-4f80-b83d-4df2e970443a")
+	)
+	(wire
+		(pts
+			(xy 85.09 46.99) (xy 100.33 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d62f120d-b62a-4b20-acb1-162d8ecf8efd")
 	)
 	(wire
 		(pts
@@ -20927,7 +21084,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 91.44 46.99 90)
+		(at 85.09 40.64 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20935,7 +21092,7 @@
 		(dnp no)
 		(uuid "a740d658-7c91-4d68-96dc-c8a72edf168f")
 		(property "Reference" "R3"
-			(at 92.964 49.276 90)
+			(at 82.804 39.116 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20944,7 +21101,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 92.964 51.816 90)
+			(at 82.804 41.656 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20953,7 +21110,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 91.44 46.99 0)
+			(at 85.09 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20962,7 +21119,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 91.44 46.99 0)
+			(at 85.09 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20971,7 +21128,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 91.44 46.99 0)
+			(at 85.09 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20989,6 +21146,73 @@
 			(project "lora_daq_module"
 				(path "/3a75d17e-6505-4097-95c7-feffd430343e/b2d61906-71c1-4ea1-893f-6962d616acd4"
 					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 85.09 52.07 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ae4f54b8-08f3-4752-a977-28861d3ed654")
+		(property "Reference" "SW1"
+			(at 90.17 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 87.63 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 80.01 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 80.01 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 77.47 51.308 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a06d5171-6f3e-43a8-ade4-3fe8095dc426")
+		)
+		(pin "2"
+			(uuid "29667c98-7c4b-461b-9b64-cc6eabc3458e")
+		)
+		(instances
+			(project ""
+				(path "/3a75d17e-6505-4097-95c7-feffd430343e/b2d61906-71c1-4ea1-893f-6962d616acd4"
+					(reference "SW1")
 					(unit 1)
 				)
 			)
@@ -21482,7 +21706,7 @@
 	)
 	(symbol
 		(lib_id "power:VDD")
-		(at 85.09 41.91 0)
+		(at 85.09 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21490,7 +21714,7 @@
 		(dnp no)
 		(uuid "cb1f71ce-3862-4dee-a4ec-5b3359dda21c")
 		(property "Reference" "#PWR012"
-			(at 85.09 45.72 0)
+			(at 85.09 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21499,7 +21723,7 @@
 			)
 		)
 		(property "Value" "VDD"
-			(at 85.09 38.608 0)
+			(at 85.09 33.528 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21507,7 +21731,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 85.09 41.91 0)
+			(at 85.09 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21516,7 +21740,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 85.09 41.91 0)
+			(at 85.09 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21525,7 +21749,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VDD\""
-			(at 85.09 41.91 0)
+			(at 85.09 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21943,6 +22167,73 @@
 			(project "lora_daq_module"
 				(path "/3a75d17e-6505-4097-95c7-feffd430343e/b2d61906-71c1-4ea1-893f-6962d616acd4"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 85.09 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ebb983f0-63dd-4cd5-b4f7-7a02be2e80f5")
+		(property "Reference" "#PWR014"
+			(at 85.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 85.09 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 85.09 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 85.09 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "816f20ab-6ff3-4c18-a056-8bf4e3d255c2")
+		)
+		(instances
+			(project "lora_daq_module"
+				(path "/3a75d17e-6505-4097-95c7-feffd430343e/b2d61906-71c1-4ea1-893f-6962d616acd4"
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
