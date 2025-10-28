@@ -80,7 +80,7 @@ I started in the datasheet:
 - Run ERC to check for errors
 
 ### Git Activity
-```bash
+```bash 
 git checkout -b schematic-adc
 git add hardware/lora_daq_module/adc.kicad_sch
 git commit -m "added ADC input filter schematic"
