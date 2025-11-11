@@ -17991,6 +17991,26 @@
 		)
 		(uuid "29715da7-0b92-421c-9ce1-52b99b794409")
 	)
+	(text "*jumper here"
+		(exclude_from_sim no)
+		(at 96.012 49.276 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+		)
+		(uuid "2d919915-bec1-4130-a459-434654005896")
+	)
+	(text "*match table 1 on datasheet"
+		(exclude_from_sim no)
+		(at 221.234 76.962 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+		)
+		(uuid "300d310c-b766-4754-b23c-3cd408e7ad3d")
+	)
 	(text "use high quality 50Ω edgemount sma"
 		(exclude_from_sim no)
 		(at 241.808 30.48 0)
@@ -18013,6 +18033,16 @@
 		)
 		(uuid "39614b49-5523-405d-ade8-b194657d72f5")
 	)
+	(text "*common-mode choke"
+		(exclude_from_sim no)
+		(at 70.358 67.564 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+		)
+		(uuid "46bd8e62-c083-4f1d-9afd-5470feb6c5ea")
+	)
 	(text "power input noise filtering \nto be continued..."
 		(exclude_from_sim no)
 		(at 167.64 29.718 0)
@@ -18034,6 +18064,16 @@
 		)
 		(uuid "b31de705-311b-469a-97fd-6d83a4bd3b55")
 	)
+	(text "*add subghz, make sure xtal pins match wio-e5,\n add swi interface"
+		(exclude_from_sim no)
+		(at 226.314 49.276 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+		)
+		(uuid "c0d99c21-3704-4f86-ae28-38af40984d97")
+	)
 	(text "addr 0x00"
 		(exclude_from_sim no)
 		(at 247.142 67.31 0)
@@ -18043,6 +18083,16 @@
 			)
 		)
 		(uuid "c5c71e6b-0f72-4b27-8778-e6bb6156434f")
+	)
+	(text "*add connector and spi input for SD card"
+		(exclude_from_sim no)
+		(at 240.792 89.916 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+		)
+		(uuid "cbe47269-8016-4373-aba9-2a22c349c0bc")
 	)
 	(text "LoRa Module and uC Peripherals"
 		(exclude_from_sim no)
@@ -18055,6 +18105,16 @@
 			)
 		)
 		(uuid "d738ee2e-494c-41be-994e-a9e49582cb9e")
+	)
+	(text "*gpio for 3.3en, 5en"
+		(exclude_from_sim no)
+		(at 169.164 86.36 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+		)
+		(uuid "e21ef62f-678a-417e-a7eb-5b7ae3975f1c")
 	)
 	(text "adc and gpio pins available"
 		(exclude_from_sim no)
@@ -18653,6 +18713,16 @@
 			(type default)
 		)
 		(uuid "6c5df088-052c-44eb-a7be-5d571d4224aa")
+	)
+	(wire
+		(pts
+			(xy 85.09 36.83) (xy 85.09 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6fbf1a4c-b5fb-4712-8060-62dda83d1ff1")
 	)
 	(wire
 		(pts
@@ -19282,7 +19352,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "00053b73-d460-4950-915e-28cadee03ec0")
-		(property "Reference" "J2"
+		(property "Reference" "J?"
 			(at 35.56 29.21 0)
 			(effects
 				(font
@@ -19377,6 +19447,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "J?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -19389,7 +19465,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0d7963cb-be08-42a6-b3eb-103229bb01cd")
-		(property "Reference" "C1"
+		(property "Reference" "C?"
 			(at 96.52 38.2269 0)
 			(effects
 				(font
@@ -19447,6 +19523,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -19459,7 +19541,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1b9192f5-92b9-468f-8386-1f250c947e91")
-		(property "Reference" "C6"
+		(property "Reference" "C?"
 			(at 219.71 33.1469 0)
 			(effects
 				(font
@@ -19517,6 +19599,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -19529,7 +19617,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2565d093-308a-444c-826f-0fa5ac124b52")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR?"
 			(at 69.85 49.53 0)
 			(effects
 				(font
@@ -19584,6 +19672,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -19596,7 +19690,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "256ba11e-76d0-43d1-a078-688ab16cb37f")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR?"
 			(at 127 48.26 0)
 			(effects
 				(font
@@ -19651,6 +19745,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -19664,7 +19764,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "36a9d8d7-4c70-47e4-8759-910f2ced6fbc")
-		(property "Reference" "C8"
+		(property "Reference" "C?"
 			(at 173.99 34.4169 0)
 			(effects
 				(font
@@ -19722,6 +19822,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -19734,7 +19840,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3aede29d-26d6-43b4-964a-de754c6dd89a")
-		(property "Reference" "C3"
+		(property "Reference" "C?"
 			(at 30.48 77.5969 0)
 			(effects
 				(font
@@ -19792,6 +19898,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -19804,7 +19916,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3b063a5d-bed2-4985-afb4-6fe0fe3cc166")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR?"
 			(at 194.31 91.44 0)
 			(effects
 				(font
@@ -19859,6 +19971,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -19872,7 +19990,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "44c5d4b6-b3c6-42ca-af95-fc8433ab1c4f")
-		(property "Reference" "C7"
+		(property "Reference" "C?"
 			(at 181.61 34.4169 0)
 			(effects
 				(font
@@ -19930,6 +20048,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -19941,7 +20065,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5664e7e6-f3e3-43fc-a161-977bd8183559")
-		(property "Reference" "U4"
+		(property "Reference" "U?"
 			(at 200.406 82.55 0)
 			(effects
 				(font
@@ -20056,6 +20180,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "U?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20067,7 +20197,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5d9a91ce-4a66-4ef2-87ba-9b363375f27b")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR?"
 			(at 215.9 60.96 0)
 			(effects
 				(font
@@ -20121,6 +20251,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20132,7 +20268,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6032a89b-e74f-429e-b2c3-412c853df473")
-		(property "Reference" "D1"
+		(property "Reference" "D?"
 			(at 80.518 73.152 0)
 			(effects
 				(font
@@ -20197,6 +20333,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "D?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20209,7 +20351,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "63afe383-4cae-4928-814a-ef23ccb66d0e")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR?"
 			(at 266.7 68.58 0)
 			(effects
 				(font
@@ -20264,6 +20406,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20276,7 +20424,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "755b106b-50c2-4d2c-a105-2da921671bc1")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR?"
 			(at 217.17 44.45 0)
 			(effects
 				(font
@@ -20331,6 +20479,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20343,7 +20497,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75baf81c-3eaa-454f-8783-801a0025c602")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR?"
 			(at 176.53 44.45 0)
 			(effects
 				(font
@@ -20398,6 +20552,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20410,7 +20570,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75d825a9-7d1b-4d70-95a2-cc0e1c7c2df6")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR?"
 			(at 113.03 105.41 0)
 			(effects
 				(font
@@ -20465,6 +20625,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20477,7 +20643,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "787fa383-718c-435e-b05e-31df4972422c")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR?"
 			(at 93.98 48.26 0)
 			(effects
 				(font
@@ -20532,6 +20698,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20543,7 +20715,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7ac790e1-b6df-4ad6-81da-304e079fe655")
-		(property "Reference" "R5"
+		(property "Reference" "R?"
 			(at 226.314 61.468 0)
 			(effects
 				(font
@@ -20601,6 +20773,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "R?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20612,7 +20790,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8a612ac2-553f-4d4f-9868-fae3bf025ac2")
-		(property "Reference" "U2"
+		(property "Reference" "U?"
 			(at 267.208 78.232 0)
 			(effects
 				(font
@@ -20688,6 +20866,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "U?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20700,7 +20884,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8d2d66d6-7856-4dbe-acc2-dba82365ab0d")
-		(property "Reference" "U3"
+		(property "Reference" "U?"
 			(at 115.1733 97.79 0)
 			(effects
 				(font
@@ -20815,6 +20999,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "U?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20827,7 +21017,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "934f1919-6e9f-49db-9386-09dc6535ba3a")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR?"
 			(at 27.94 88.9 0)
 			(effects
 				(font
@@ -20882,6 +21072,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20893,7 +21089,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "967860c4-12ad-46d3-845d-c9b5851099af")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR?"
 			(at 261.62 59.69 0)
 			(effects
 				(font
@@ -20947,6 +21143,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -20959,7 +21161,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9abc243b-6771-4939-a5ca-c3adaefef946")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR?"
 			(at 63.5 52.07 0)
 			(effects
 				(font
@@ -21014,6 +21216,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21026,7 +21234,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9d937813-42db-45c4-a8aa-cc2b10285214")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR?"
 			(at 93.98 40.64 0)
 			(effects
 				(font
@@ -21080,6 +21288,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21091,7 +21305,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a740d658-7c91-4d68-96dc-c8a72edf168f")
-		(property "Reference" "R3"
+		(property "Reference" "R?"
 			(at 82.804 39.116 0)
 			(effects
 				(font
@@ -21149,6 +21363,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "R?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21160,7 +21380,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ae4f54b8-08f3-4752-a977-28861d3ed654")
-		(property "Reference" "SW1"
+		(property "Reference" "SW?"
 			(at 90.17 52.07 0)
 			(effects
 				(font
@@ -21216,6 +21436,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "SW?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21228,7 +21454,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "af431602-42b7-4274-bb65-c7b7b8ecb798")
-		(property "Reference" "J1"
+		(property "Reference" "J?"
 			(at 225.5404 24.13 0)
 			(effects
 				(font
@@ -21293,6 +21519,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "J?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21305,7 +21537,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b2bda38d-f263-46fb-9440-66d6e686640a")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR?"
 			(at 229.87 44.45 0)
 			(effects
 				(font
@@ -21360,6 +21592,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21372,7 +21610,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b63f30d2-6fda-4250-ad64-fecd838f2a34")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR?"
 			(at 101.6 48.26 0)
 			(effects
 				(font
@@ -21427,6 +21665,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21438,7 +21682,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b746e6e5-1406-496a-bb84-0f174c53564e")
-		(property "Reference" "R1"
+		(property "Reference" "R?"
 			(at 56.642 43.18 90)
 			(effects
 				(font
@@ -21496,6 +21740,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "R?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21508,7 +21758,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b82da61d-7aa4-40a8-a8e6-f13fa8e6208b")
-		(property "Reference" "C2"
+		(property "Reference" "C?"
 			(at 104.14 38.2269 0)
 			(effects
 				(font
@@ -21566,6 +21816,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21577,7 +21833,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c288fcae-45dc-41ed-8d82-86960fbfb2cd")
-		(property "Reference" "C9"
+		(property "Reference" "C?"
 			(at 269.24 58.5469 0)
 			(effects
 				(font
@@ -21635,6 +21891,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21647,7 +21909,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c8eb7d6c-0340-4cb6-b1af-b58149f79b06")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR?"
 			(at 261.62 86.36 0)
 			(effects
 				(font
@@ -21702,6 +21964,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21713,7 +21981,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cb1f71ce-3862-4dee-a4ec-5b3359dda21c")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR?"
 			(at 85.09 40.64 0)
 			(effects
 				(font
@@ -21767,6 +22035,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21778,7 +22052,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cd7ca3e3-cf30-4f6e-a42f-fba776ec3e49")
-		(property "Reference" "R4"
+		(property "Reference" "R?"
 			(at 213.868 60.96 0)
 			(effects
 				(font
@@ -21836,6 +22110,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "R?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21848,7 +22128,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cfee7f09-a586-4c1e-93c7-04fd46b67a97")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR?"
 			(at 184.15 44.45 0)
 			(effects
 				(font
@@ -21903,6 +22183,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21914,7 +22200,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d9d41a8c-1b5f-4311-b884-85f377ea903c")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR?"
 			(at 186.69 35.56 0)
 			(effects
 				(font
@@ -21968,6 +22254,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -21980,7 +22272,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "daed7274-1c9a-4169-ae21-7a5ef6c3842e")
-		(property "Reference" "L1"
+		(property "Reference" "L?"
 			(at 212.09 25.4 90)
 			(effects
 				(font
@@ -22036,6 +22328,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "L?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -22048,7 +22346,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e073539f-5ed8-441b-84bc-3eb7836ed1ab")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR?"
 			(at 95.25 83.82 0)
 			(effects
 				(font
@@ -22103,6 +22401,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -22114,7 +22418,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e7cd58ed-84f9-428c-ae1a-f779b11a41b3")
-		(property "Reference" "R2"
+		(property "Reference" "R?"
 			(at 68.834 38.1 90)
 			(effects
 				(font
@@ -22170,6 +22474,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "R?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -22182,7 +22492,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ebb983f0-63dd-4cd5-b4f7-7a02be2e80f5")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR?"
 			(at 85.09 62.23 0)
 			(effects
 				(font
@@ -22237,6 +22547,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -22248,7 +22564,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f05f6754-7153-4efb-8e6f-04dc30445234")
-		(property "Reference" "C4"
+		(property "Reference" "C?"
 			(at 129.54 38.2269 0)
 			(effects
 				(font
@@ -22306,6 +22622,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -22318,7 +22640,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f7134cc5-4f9d-4726-a639-bc08739d3c66")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR?"
 			(at 207.01 44.45 0)
 			(effects
 				(font
@@ -22373,6 +22695,12 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -22385,7 +22713,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ff3401a5-a4c6-4209-ad3c-99dc021fb570")
-		(property "Reference" "C5"
+		(property "Reference" "C?"
 			(at 209.55 33.1469 0)
 			(effects
 				(font
@@ -22443,6 +22771,18 @@
 					(unit 1)
 				)
 			)
+			(project "lora_module"
+				(path "/a74f7a14-530d-4456-bc3f-f2ca160ee8a8"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )
