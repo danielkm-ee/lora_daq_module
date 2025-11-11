@@ -90,3 +90,75 @@ git push origin schematic-adc
 ### Resources & Links
 **Datasheets:**
 - [ADS1115 Datasheet](https://www.ti.com/lit/ds/symlink/ads1115.pdf)
+
+# Nov 10, 2025 - ADC Schematic Design Optimization
+
+On November 10, 2025, I optimized the voltage divider resistor values after reviewing the OPA333 datasheet. Daniel suggested we could meet three requirements with one voltage divider instead of adding separate protection circuitry.
+
+### Problem Identified
+While reviewing **OPA333 datasheet Section 7.3.2** (Input Voltage), found critical requirement:
+> "Input voltages that exceed the power supplies can cause excessive current to flow into or out of the input pins. Momentary voltages greater than the power supply can be tolerated if the input current is limited to 10 mA. This limitation is easily accomplished with an input resistor, as shown in Figure 18."
+
+Since our soil moisture sensor outputs up to 5V (exceeds 3.3V supply by 1.7V), we need input current protection.
+
+### Solution
+Daniel suggested increasing the voltage divider ratio to accomplish three things simultaneously:
+
+**1. Voltage divider:** Scale 5V → 4.096V for ADS1115 optimal range  
+**2. Input protection:** Limit current to <10mA per OPA333 datasheet  
+**3. FSR matching:** Stay within ±4.096V ADS1115 range for 125µV resolution
+
+### Design Calculations
+
+**Voltage divider:**
+```
+Target: 4.096V from 5V input
+For voltage divider: Vout = Vin × (R2/(R3+R2))
+
+R3 = 47kΩ  (series input protection)
+R2 = 220kΩ (to ground)
+
+Voltage scaling: 5V × (220k/(47k+220k)) = 4.12V 
+Input protection: 5V/47kΩ = 106µA
+FSR match: 4.12V < 4.3V max 
+```
+
+**RC filter cutoff:**
+```
+R1 = 1kΩ
+C1 = 47nF (changed from 100nF)
+f_cutoff = 1/(2π × 1k × 47nF) = 3.39 kHz
+```
+
+### Component Updates
+- R3: 2.2kΩ → **47kΩ**
+- R2: 3.9kΩ → **220kΩ**  
+- C1: 100nF → **47nF**
+
+**Schematic Status:** Finalized - only BOM and component boxing remaining
+
+### ADS1115 Configuration Planning (next steps)
+```
+Gain: ±4.096V (GAIN_ONE) → 125µV resolution
+Data rate: 128 SPS → 8ms conversion time
+Mode: Single-shot → 0.5µA sleep current (vs 150µA continuous)
+Resolution: 16-bit → 65,536 counts
+Config register: 0xC383
+```
+
+### Wio-E5 I2C Interface
+Started looking into STM32 development:
+- **I2C2 pins:** PB15 (SCL), PA15 (SDA)
+- **Tool:**  STM32CubeIDE for development
+- **Debug:** ST-Link for programming interface
+
+**Next Steps:**
+- Complete STM32CubeIDE setup today
+- Configure I2C2 peripheral
+- Write I2C scanner test code
+
+### Resources & Links
+**Datasheets:**
+- [OPA333 Datasheet](https://www.ti.com/lit/ds/symlink/opa333.pdf) 
+- [ADS1115 Datasheet](https://www.ti.com/lit/ds/symlink/ads1115.pdf)
+- [Wio-E5 Module Datasheet V1.1](https://files.seeedstudio.com/products/317990687/res/LoRa-E5%20module%20datasheet_V1.1.pdf)
