@@ -16,6 +16,7 @@ arm-none-eabi-gcc --version
 openocd --version
 ```
 ### 3. Project Structure
+```
 firmware/
 ├── src/           # Application code
 ├── config/        # HAL & board configuration
@@ -23,6 +24,7 @@ firmware/
 ├── startup_stm32wle5xx.s
 ├── stm32wl.ld     # Linker script
 └── Makefile
+```
 
 ### 4. Build and Flash
 #### Build firmware

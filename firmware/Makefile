@@ -5,6 +5,7 @@ TARGET = firmware
 BUILD  = build
 SRC_DIRS = src lib/STM32WLxx_HAL_Driver/Src
 INC_DIRS = config \
+			src \
            lib/STM32WLxx_HAL_Driver/Inc \
            lib/STM32WLxx/Include\
 		   lib/CMSIS/Include
@@ -29,6 +30,8 @@ $(BUILD)/$(TARGET).elf: $(OBJ) $(STARTUP)
 	@mkdir -p $(BUILD)
 	$(CC) $(CFLAGS) $(OBJ) $(STARTUP) $(LDFLAGS) -o $@
 	$(OBJCOPY) -O binary $@ $(BUILD)/$(TARGET).bin
+	@echo
+	@echo "Build complete: $(BUILD)/$(TARGET).elf and $(BUILD)/$(TARGET).bin"
 
 
 # Build .c files from the src/ folder
