@@ -1,28 +1,28 @@
 #########################################
 # Project setup
 #########################################
-TARGET = firmware
-BUILD  = build
-SRC_DIRS = src lib/STM32WLxx_HAL_Driver/Src
+TARGET = firmware # Name of the output bin files
+BUILD  = build # folder for compiled outputs
+SRC_DIRS = src lib/STM32WLxx_HAL_Driver/Src # Source code folders; main and HAL driver
 INC_DIRS = config \
 			src \
            lib/STM32WLxx_HAL_Driver/Inc \
            lib/STM32WLxx/Include\
-		   lib/CMSIS/Include
-STARTUP = startup_stm32wle5xx.s
+		   lib/CMSIS/Include # Include header files directories
+STARTUP = startup_stm32wle5xx.s # Startup assembly file, using template at lib/CMSIS/Device/ST/STM32WLxx/Source/Templates
 
 # Toolchain
 
-CC = arm-none-eabi-gcc
-OBJCOPY = arm-none-eabi-objcopy
-CFLAGS = -mcpu=cortex-m4 -mthumb -O2 -Wall -g -DSTM32WLE5xx -DUSE_HAL_DRIVER
+CC = arm-none-eabi-gcc # cross-compiler for ARM Cortex-M
+OBJCOPY = arm-none-eabi-objcopy # to convert ELF to binary
+CFLAGS = -mcpu=cortex-m4 -mthumb -O2 -Wall -g -DSTM32WLE5xx -DUSE_HAL_DRIVER # Compiler flags
 CFLAGS += $(addprefix -I, $(INC_DIRS))
-LDFLAGS = -T stm32wl.ld -Wl,--gc-sections
+LDFLAGS = -T stm32wl.ld -Wl,--gc-sections # using Linter script stm32wl.ld; remove unused sections
 SRC = $(filter-out \
 	lib/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_timebase_rtc_alarm_template.c \
 	lib/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_timebase_rtc_wakeup_template.c, \
-	$(foreach d, $(SRC_DIRS), $(wildcard $(d)/*.c)))
-OBJ = $(addprefix $(BUILD)/, $(notdir $(SRC:.c=.o)))
+	$(foreach d, $(SRC_DIRS), $(wildcard $(d)/*.c))) # All .c source files, excluding unused HAL timebase templates
+OBJ = $(addprefix $(BUILD)/, $(notdir $(SRC:.c=.o))) # Object files to be built
 
 all: $(BUILD)/$(TARGET).elf
 

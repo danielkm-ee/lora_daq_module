@@ -34,3 +34,13 @@ make
 openocd -f interface/stlink.cfg -f target/stm32wlx.cfg \
   -c "init; halt" \
   -c "program build/firmware.elf verify reset exit"
+
+## Development Notes
+
+### HAL Module Configuration
+The file `firmware/src/stm32wlxx_hal_conf.h` controls which HAL peripheral modules are enabled in the project.  
+To disable a module, comment out its corresponding `HAL_xxx_MODULE_ENABLED` line.
+
+### How to Use HAL Functions
+To learn how a specific peripheral works, refer to the HAL driver source files located in:
+`firmware\lib\STM32WLxx_HAL_Driver\Src`
