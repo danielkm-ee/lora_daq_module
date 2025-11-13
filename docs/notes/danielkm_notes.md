@@ -116,3 +116,26 @@ Here's a table showing the current pinout:
 | J8       | RFO_LP         | MonoIO |                  |       |
 | J9       | RFO_HP         | MonoIO |                  |       |
 
+
+# Nov 12th -- Schematic updates and Preliminary layout
+
+## Schematic updates 
+Yesterday I was able to merge the drawing sheets for the adc, lora module, and power management schematics. I worked on the schematic to get it ready for layout, and added to the power management schematic.
+Here's a quick changelog:
+--------------
+* Added power switching IC to select USB vs Battery power to the power management schematic
+* Added two pin connector for battery
+* added pullup for the reset pin on the lora module
+* added large DNP capacitor at the 3V3 output from the CP2102 as a fallback power supply
+* added footprints to all components
+
+More detailed comments
+----------------
+There are two ways we can arrange the power circuits. We could (1) boost the 3.7V battery voltage, then perform power switching between VBUS and VBATT, then send the winner to the LDO. or (2) compare VBUS and VBATT, then send the winner to the boost/buck converter, then the LDO. Currently I'm using option (1), but we may want to move to option (2) as the power switching circuit will help to limit current draw from the battery when we are not using it.
+
+When adding footprints I attempted to be accurate as I could without making custom footprints. It's possible that the footprints I've used need modifications and we'll have to check on that before we order the boards next week.
+
+## Preliminary Layout
+Tonight I was able to arrange the components, and I've used reference layouts for every aspect of the circuit. This includes the layouts provided on the data sheets for the MCP73833, TPS2116, and TPS63002, and otherwise I used the dev board and application notes as a reference.
+
+I was not able to lay out all of the traces, particularly because I haven't decided how I want my power planes set up. Tonight I focused on fitting the components onto the board with a great attention to detail on their arrangement and orientations. I'll be submitting the preliminary layout and current schematics to canvas for the week 6 assignment, and to github (for the assignment and for our own reference.)
