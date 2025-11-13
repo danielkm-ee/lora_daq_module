@@ -17,30 +17,6 @@
 		)
 		(uuid 7826dc6e-141d-4444-9e67-3e086c9005c5)
 	)
-	(rectangle
-		(start 175.514 26.924)
-		(end 278.384 100.33)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid faaf6258-957a-45bf-93ec-f2c5c4348843)
-	)
-	(text "Main sheet"
-		(exclude_from_sim no)
-		(at 177.546 34.29 0)
-		(effects
-			(font
-				(size 6.35 6.35)
-				(color 0 0 255 1)
-			)
-			(justify left)
-		)
-		(uuid "5e576213-7b46-4bb4-83a3-b218db7e295a")
-	)
 	(text "blame: manaf alali"
 		(exclude_from_sim no)
 		(at 50.292 102.108 0)
@@ -121,48 +97,6 @@
 			(project "lora_daq_module"
 				(path "/3a75d17e-6505-4097-95c7-feffd430343e"
 					(page "2")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 184.912 46.228)
-		(size 82.296 12.954)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "512c26a3-9fe0-46e0-b682-39a5862b731a")
-		(property "Sheetname" "main_board_v0"
-			(at 184.912 45.5164 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "main_board_v0.kicad_sch"
-			(at 184.912 59.7666 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "lora_daq_module"
-				(path "/3a75d17e-6505-4097-95c7-feffd430343e"
-					(page "5")
 				)
 			)
 		)
