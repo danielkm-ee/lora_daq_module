@@ -121,6 +121,7 @@ Here's a table showing the current pinout:
 
 ## Schematic updates 
 Yesterday I was able to merge the drawing sheets for the adc, lora module, and power management schematics. I worked on the schematic to get it ready for layout, and added to the power management schematic.
+
 Here's a quick changelog:
 --------------
 * Added power switching IC to select USB vs Battery power to the power management schematic
@@ -139,3 +140,30 @@ When adding footprints I attempted to be accurate as I could without making cust
 Tonight I was able to arrange the components, and I've used reference layouts for every aspect of the circuit. This includes the layouts provided on the data sheets for the MCP73833, TPS2116, and TPS63002, and otherwise I used the dev board and application notes as a reference.
 
 I was not able to lay out all of the traces, particularly because I haven't decided how I want my power planes set up. Tonight I focused on fitting the components onto the board with a great attention to detail on their arrangement and orientations. I'll be submitting the preliminary layout and current schematics to canvas for the week 6 assignment, and to github (for the assignment and for our own reference.)
+
+
+# Nov 14th - BOM and Rough draft of CAD
+I'm currently working through the symbol fields table component-by-component to assign part numbers and finalize our footprints as best as I can. I've run into a few cases where we may need to make some changes and I want to be sure to explain them here!
+
+changelog:
+----------
+* Replacing the ADS1115 with the ADS1110
+> Basically, the ADS1115 comes in three packages; a QFN, a TSSOP, and a VSSOP. When assigning the prelim footprint I used the TSSOP because it is much more friendly for hand soldering, with a pin spacing of about .85mm. It's closest counterpart would be the VSSOP, though this has a .5mm spacing which will make it very difficult to solder. The TSSOP would have been fine to use, but Digikey only stocks the VSSOP and the QFN, which present considerable challenges to an already difficult buildup of this board thus far. 
+> Because we aren't using the four channels on the ADS1115, there is no need to stick to this specific part. Additionally, the added channels create a more expensive and difficult ADC circuit for our board which is hard to justify for this prototype. I looked to the ADS1119 which comes in a TSSOP with the same number of channels, but an even more reasonable option here is the ADS1110 which comes in an SOT23-5 and has a single differential input. Digikey has around 5k stocked and they come in multiple variants with different I2C addresses, and the SOT23-5 is a much more hand-solder friendly package. This will require some careful review of the ADC circuit, though the ADS111x series does a good job of being close to standard so we may be able to avoid major changes here.
+
+When looking for resistors I noticed a vast majority of 10kΩ resistors, I assume these are for pull ups. I've been using 4.7k for these, which is a very viable option, but I wonder if we should move to 10k to reduce quiescent current draw as were operating on battery power... will look into this later on.
+
+Another note, I found that the CP2102N has some form of battery charger detection that I can't believe I've missed up until now. Not sure what this entails but it's another thing to explore as I review our power schematic.
+
+As far as resistors go, I am using 0603 1/10W everywhere for now. Once we've had another pass over everything we can bump up footprints and power tolerances as needed.
+
+> Also, note to self.... FILL OUT THE PRICE PER UNIT FIELD AS YOU GO!!  
+> Currently 75 percent through the part assignment and will have to go over the whole list again T.T
+
+> > *Actually, I think digikey will be able to give me pricing based on a csv.. so crisis averted.
+
+For the 3.3uH inductor used on the buck/boost tps63002 I am using the Coilcraft LPS3015 series based on the reccommended inductor list from table 2 on page 11 of the IC's datasheet. This is a marketplace item, shipped through coildcraft directly. In general I have avoided marketplace items.
+
+Another exception I've made here is the resistor rule mentioned earlier, I am using an automotive grade 50Ω resistor at the pi network at the antenna, though this may be overkill. For refrence, the price difference is about 6x, where typical resistors are 10 cents, this one is 62 cents. like i said,,, maybe overkill!
+
+Another area we'll definitely want to explore is connectors, particularly headers. Currently I'm ordering pre-cut pin headers in the array sizes we need, but since we're hand-soldering these down that's completely unnecessary. May be cheaper to just order a pair of long 1-row and 2-row headers to cut down to size by ourselves.
