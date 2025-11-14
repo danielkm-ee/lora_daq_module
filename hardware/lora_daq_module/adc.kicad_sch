@@ -2287,7 +2287,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "220 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film"
 			(at 125.73 105.41 0)
 			(effects
 				(font
@@ -2296,7 +2296,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 125.73 105.41 0)
 			(effects
 				(font
@@ -2305,7 +2305,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "RMCF0603FT220KCT-ND"
 			(at 125.73 105.41 0)
 			(effects
 				(font
@@ -2314,7 +2314,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Stackpole Electronics Inc"
 			(at 125.73 105.41 0)
 			(effects
 				(font
@@ -2323,7 +2323,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "RES 220K OHM 1% 1/10W 0603"
 			(at 125.73 105.41 0)
 			(effects
 				(font
@@ -2411,7 +2411,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CAP CER 0.047UF 25V X7R 0603"
 			(at 138.43 105.41 0)
 			(effects
 				(font
@@ -2420,7 +2420,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 138.43 105.41 0)
 			(effects
 				(font
@@ -2429,7 +2429,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-1373-1-ND"
 			(at 138.43 105.41 0)
 			(effects
 				(font
@@ -2438,7 +2438,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 138.43 105.41 0)
 			(effects
 				(font
@@ -2447,7 +2447,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "CC0603KRX7R8BB473"
 			(at 138.43 105.41 0)
 			(effects
 				(font
@@ -2534,7 +2534,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "Diode Array 1 Pair Series Connection 40 V 200mA Surface Mount TO-236-3, SC-59, SOT-23-3"
 			(at 147.32 88.9 0)
 			(effects
 				(font
@@ -2543,7 +2543,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 147.32 88.9 0)
 			(effects
 				(font
@@ -2552,7 +2552,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "4878-BAS40-04CT-ND"
 			(at 147.32 88.9 0)
 			(effects
 				(font
@@ -2561,7 +2561,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Diotec Semiconductor"
 			(at 147.32 88.9 0)
 			(effects
 				(font
@@ -2570,7 +2570,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "BAS40-04"
 			(at 147.32 88.9 0)
 			(effects
 				(font
@@ -2658,7 +2658,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "47 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film"
 			(at 121.92 101.6 90)
 			(effects
 				(font
@@ -2667,7 +2667,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 121.92 101.6 90)
 			(effects
 				(font
@@ -2676,7 +2676,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-47.0KHRCT-ND"
 			(at 121.92 101.6 90)
 			(effects
 				(font
@@ -2685,7 +2685,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 121.92 101.6 90)
 			(effects
 				(font
@@ -2694,7 +2694,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "RC0603FR-0747KL"
 			(at 121.92 101.6 90)
 			(effects
 				(font
@@ -2844,7 +2844,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "1 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film"
 			(at 134.62 105.41 0)
 			(effects
 				(font
@@ -2853,7 +2853,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 134.62 105.41 0)
 			(effects
 				(font
@@ -2862,7 +2862,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "RMCF0603FT1K00CT-ND"
 			(at 134.62 105.41 0)
 			(effects
 				(font
@@ -2871,7 +2871,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Stackpole Electronics Inc"
 			(at 134.62 105.41 0)
 			(effects
 				(font
@@ -2880,7 +2880,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "RMCF0603FT1K00"
 			(at 134.62 105.41 0)
 			(effects
 				(font
@@ -2996,7 +2996,7 @@
 				)
 			)
 		)
-		(property "Value" "0.1u"
+		(property "Value" ".1u"
 			(at 181.6163 88.9 90)
 			(effects
 				(font
@@ -3031,7 +3031,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CAP CER 0.1UF 16V X7R 0603"
 			(at 181.61 92.71 90)
 			(effects
 				(font
@@ -3040,7 +3040,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 181.61 92.71 90)
 			(effects
 				(font
@@ -3049,7 +3049,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-1088-1-ND"
 			(at 181.61 92.71 90)
 			(effects
 				(font
@@ -3058,7 +3058,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 181.61 92.71 90)
 			(effects
 				(font
@@ -3067,7 +3067,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "CC0603KRX7R7BB104"
 			(at 181.61 92.71 90)
 			(effects
 				(font
@@ -3583,7 +3583,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-353_SC-70-5_Handsoldering"
 			(at 157.48 109.22 0)
 			(effects
 				(font
@@ -3611,7 +3611,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "IC OPAMP ZERO-DRIFT 1CIRC SC70-5"
 			(at 160.02 104.14 0)
 			(effects
 				(font
@@ -3620,7 +3620,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 160.02 104.14 0)
 			(effects
 				(font
@@ -3629,7 +3629,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "296-19547-1-ND"
 			(at 160.02 104.14 0)
 			(effects
 				(font
@@ -3638,7 +3638,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Texas Instruments"
 			(at 160.02 104.14 0)
 			(effects
 				(font
@@ -3647,7 +3647,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "OPA333AIDCKR"
 			(at 160.02 104.14 0)
 			(effects
 				(font
@@ -3753,7 +3753,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "Connector Header Through Hole 3 position 0.098\" (2.50mm)"
 			(at 95.25 104.14 0)
 			(effects
 				(font
@@ -3762,7 +3762,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 95.25 104.14 0)
 			(effects
 				(font
@@ -3771,7 +3771,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "455-B3B-EH-A-ND"
 			(at 95.25 104.14 0)
 			(effects
 				(font
@@ -3780,7 +3780,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "JST Sales America Inc."
 			(at 95.25 104.14 0)
 			(effects
 				(font
@@ -3789,7 +3789,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "B3B-EH-A"
 			(at 95.25 104.14 0)
 			(effects
 				(font
@@ -3909,7 +3909,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ADS1115IDGS"
+		(property "Value" "ADS1110A0IDBVR"
 			(at 188.8333 93.98 0)
 			(effects
 				(font
@@ -3918,7 +3918,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:TSSOP-10_3x3mm_P0.5mm"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6_Handsoldering"
 			(at 186.69 119.38 0)
 			(effects
 				(font
@@ -3945,7 +3945,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "IC ADC 16BIT SIGMA-DELTA SOT23-6"
 			(at 186.69 106.68 0)
 			(effects
 				(font
@@ -3954,7 +3954,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 186.69 106.68 0)
 			(effects
 				(font
@@ -3963,7 +3963,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "296-25890-1-ND"
 			(at 186.69 106.68 0)
 			(effects
 				(font
@@ -3972,7 +3972,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Texas Instruments"
 			(at 186.69 106.68 0)
 			(effects
 				(font
@@ -3981,7 +3981,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "ADS1110A0IDBVR"
 			(at 186.69 106.68 0)
 			(effects
 				(font

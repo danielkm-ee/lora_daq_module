@@ -21282,7 +21282,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CONN RCP USB3.1 TYPEC 24P SMD RA"
 			(at 35.56 54.61 0)
 			(effects
 				(font
@@ -21291,7 +21291,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 35.56 54.61 0)
 			(effects
 				(font
@@ -21300,7 +21300,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "WM12856CT-ND"
 			(at 35.56 54.61 0)
 			(effects
 				(font
@@ -21309,7 +21309,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Molex"
 			(at 35.56 54.61 0)
 			(effects
 				(font
@@ -21318,7 +21318,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "1054500101"
 			(at 35.56 54.61 0)
 			(effects
 				(font
@@ -21451,7 +21451,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CAP CER 1UF 16V X7R 0603"
 			(at 107.95 41.91 0)
 			(effects
 				(font
@@ -21460,7 +21460,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 107.95 41.91 0)
 			(effects
 				(font
@@ -21469,7 +21469,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "490-5241-1-ND"
 			(at 107.95 41.91 0)
 			(effects
 				(font
@@ -21478,7 +21478,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Murata Electronics"
 			(at 107.95 41.91 0)
 			(effects
 				(font
@@ -21487,7 +21487,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "GCM188R71C105KA64D"
 			(at 107.95 41.91 0)
 			(effects
 				(font
@@ -21858,7 +21858,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CAP CER 0.1UF 16V X7R 0603"
 			(at 196.85 45.72 0)
 			(effects
 				(font
@@ -21867,7 +21867,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 196.85 45.72 0)
 			(effects
 				(font
@@ -21876,7 +21876,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-1088-1-ND"
 			(at 196.85 45.72 0)
 			(effects
 				(font
@@ -21885,7 +21885,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 196.85 45.72 0)
 			(effects
 				(font
@@ -21894,7 +21894,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "CC0603KRX7R7BB104"
 			(at 196.85 45.72 0)
 			(effects
 				(font
@@ -21938,7 +21938,7 @@
 		(at 125.73 38.1 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -22188,7 +22188,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CAP CER 10000PF 100V X7R 0603"
 			(at 27.94 81.28 0)
 			(effects
 				(font
@@ -22197,7 +22197,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 27.94 81.28 0)
 			(effects
 				(font
@@ -22206,7 +22206,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "490-4781-1-ND"
 			(at 27.94 81.28 0)
 			(effects
 				(font
@@ -22215,7 +22215,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Murata Electronics"
 			(at 27.94 81.28 0)
 			(effects
 				(font
@@ -22224,7 +22224,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "GCM188R72A103KA37D"
 			(at 27.94 81.28 0)
 			(effects
 				(font
@@ -22391,7 +22391,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CAP CER 10000PF 100V X7R 0603"
 			(at 80.01 172.72 0)
 			(effects
 				(font
@@ -22400,7 +22400,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 80.01 172.72 0)
 			(effects
 				(font
@@ -22409,7 +22409,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "490-4781-1-ND"
 			(at 80.01 172.72 0)
 			(effects
 				(font
@@ -22418,7 +22418,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Murata Electronics"
 			(at 80.01 172.72 0)
 			(effects
 				(font
@@ -22427,7 +22427,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "GCM188R72A103KA37D"
 			(at 80.01 172.72 0)
 			(effects
 				(font
@@ -22522,7 +22522,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CAP CER 1UF 16V X7R 0603"
 			(at 204.47 45.72 0)
 			(effects
 				(font
@@ -22531,7 +22531,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 204.47 45.72 0)
 			(effects
 				(font
@@ -22540,7 +22540,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "490-5241-1-ND"
 			(at 204.47 45.72 0)
 			(effects
 				(font
@@ -22549,7 +22549,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Murata Electronics"
 			(at 204.47 45.72 0)
 			(effects
 				(font
@@ -22558,7 +22558,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "GCM188R71C105KA64D"
 			(at 204.47 45.72 0)
 			(effects
 				(font
@@ -22723,7 +22723,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CONN MICRO SD CARD R/A SMD"
 			(at 58.42 156.21 0)
 			(effects
 				(font
@@ -22732,7 +22732,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 58.42 156.21 0)
 			(effects
 				(font
@@ -22741,7 +22741,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "WM6357CT-ND"
 			(at 58.42 156.21 0)
 			(effects
 				(font
@@ -22750,7 +22750,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Molex"
 			(at 58.42 156.21 0)
 			(effects
 				(font
@@ -22759,7 +22759,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "1040310811"
 			(at 58.42 156.21 0)
 			(effects
 				(font
@@ -22876,7 +22876,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "RF TXRX MOD ISM<1GHZ SMD LORA"
 			(at 213.36 76.2 0)
 			(effects
 				(font
@@ -22885,7 +22885,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 213.36 76.2 0)
 			(effects
 				(font
@@ -22894,7 +22894,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "1597-317990829CT-ND"
 			(at 213.36 76.2 0)
 			(effects
 				(font
@@ -22903,7 +22903,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Seeed Technology Co., Ltd"
 			(at 213.36 76.2 0)
 			(effects
 				(font
@@ -22912,7 +22912,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "317990829"
 			(at 213.36 76.2 0)
 			(effects
 				(font
@@ -23077,7 +23077,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "4.7 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film"
 			(at 184.15 53.34 0)
 			(effects
 				(font
@@ -23086,7 +23086,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 184.15 53.34 0)
 			(effects
 				(font
@@ -23095,7 +23095,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-4.7KGRCT-ND"
 			(at 184.15 53.34 0)
 			(effects
 				(font
@@ -23104,7 +23104,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 184.15 53.34 0)
 			(effects
 				(font
@@ -23113,7 +23113,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "RC0603JR-074K7L"
 			(at 184.15 53.34 0)
 			(effects
 				(font
@@ -23206,7 +23206,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "Connector Header Through Hole 3 position 0.098\" (2.50mm)"
 			(at 182.88 147.32 0)
 			(effects
 				(font
@@ -23215,7 +23215,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 182.88 147.32 0)
 			(effects
 				(font
@@ -23224,7 +23224,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "455-B3B-EH-A-ND"
 			(at 182.88 147.32 0)
 			(effects
 				(font
@@ -23233,7 +23233,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "JST Sales America Inc."
 			(at 182.88 147.32 0)
 			(effects
 				(font
@@ -23242,7 +23242,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "B3B-EH-A"
 			(at 182.88 147.32 0)
 			(effects
 				(font
@@ -23483,7 +23483,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "TVS DIODE 5.5VWM 8.5VC SOT1434"
 			(at 105.41 76.2 0)
 			(effects
 				(font
@@ -23492,7 +23492,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 105.41 76.2 0)
 			(effects
 				(font
@@ -23501,7 +23501,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "F2715CT-ND"
 			(at 105.41 76.2 0)
 			(effects
 				(font
@@ -23510,7 +23510,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Littelfuse Inc."
 			(at 105.41 76.2 0)
 			(effects
 				(font
@@ -23519,7 +23519,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "SP0503BAHTG"
 			(at 105.41 76.2 0)
 			(effects
 				(font
@@ -24055,7 +24055,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "4.7 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film"
 			(at 247.65 54.61 0)
 			(effects
 				(font
@@ -24064,7 +24064,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 247.65 54.61 0)
 			(effects
 				(font
@@ -24073,7 +24073,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-4.7KGRCT-ND"
 			(at 247.65 54.61 0)
 			(effects
 				(font
@@ -24082,7 +24082,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 247.65 54.61 0)
 			(effects
 				(font
@@ -24091,7 +24091,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "RC0603JR-074K7L"
 			(at 247.65 54.61 0)
 			(effects
 				(font
@@ -24384,7 +24384,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "EEPROM Memory IC 256Kbit I2C 1 MHz 500 ns 8-SOIC"
 			(at 115.57 156.21 0)
 			(effects
 				(font
@@ -24393,7 +24393,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 115.57 156.21 0)
 			(effects
 				(font
@@ -24402,7 +24402,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "CAT24C256WI-GT3OSCT-ND"
 			(at 115.57 156.21 0)
 			(effects
 				(font
@@ -24411,7 +24411,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "onsemi"
 			(at 115.57 156.21 0)
 			(effects
 				(font
@@ -24420,7 +24420,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "CAT24C256WI-GT3"
 			(at 115.57 156.21 0)
 			(effects
 				(font
@@ -24532,7 +24532,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "IC USB TO UART BRIDGE QFN20"
 			(at 123.19 74.93 0)
 			(effects
 				(font
@@ -24541,7 +24541,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 123.19 74.93 0)
 			(effects
 				(font
@@ -24550,7 +24550,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "336-5886-1-ND"
 			(at 123.19 74.93 0)
 			(effects
 				(font
@@ -24559,7 +24559,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Silicon Labs"
 			(at 123.19 74.93 0)
 			(effects
 				(font
@@ -24568,7 +24568,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "CP2102N-A02-GQFN20R"
 			(at 123.19 74.93 0)
 			(effects
 				(font
@@ -25158,7 +25158,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "SMA Connector Jack, Female Socket 50 Ohms Board Edge, End Launch Solder"
 			(at 248.92 33.02 0)
 			(effects
 				(font
@@ -25167,7 +25167,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digkey"
 			(at 248.92 33.02 0)
 			(effects
 				(font
@@ -25176,7 +25176,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "900-0732511153-ND"
 			(at 248.92 33.02 0)
 			(effects
 				(font
@@ -25185,7 +25185,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Molex"
 			(at 248.92 33.02 0)
 			(effects
 				(font
@@ -25194,7 +25194,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "0732511153"
 			(at 248.92 33.02 0)
 			(effects
 				(font
@@ -25433,7 +25433,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "5.1 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film"
 			(at 66.04 50.8 0)
 			(effects
 				(font
@@ -25442,7 +25442,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 66.04 50.8 0)
 			(effects
 				(font
@@ -25451,7 +25451,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-5.10KHRCT-ND"
 			(at 66.04 50.8 0)
 			(effects
 				(font
@@ -25460,7 +25460,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 66.04 50.8 0)
 			(effects
 				(font
@@ -25469,7 +25469,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "RC0603FR-075K1L"
 			(at 66.04 50.8 0)
 			(effects
 				(font
@@ -25563,7 +25563,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CAP CER 0.1UF 16V X7R 0603"
 			(at 113.03 41.91 0)
 			(effects
 				(font
@@ -25572,7 +25572,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 113.03 41.91 0)
 			(effects
 				(font
@@ -25581,7 +25581,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-1088-1-ND"
 			(at 113.03 41.91 0)
 			(effects
 				(font
@@ -25590,7 +25590,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 113.03 41.91 0)
 			(effects
 				(font
@@ -25599,7 +25599,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "CC0603KRX7R7BB104"
 			(at 113.03 41.91 0)
 			(effects
 				(font
@@ -25692,7 +25692,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "4.7 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film"
 			(at 262.89 69.85 0)
 			(effects
 				(font
@@ -25701,7 +25701,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 262.89 69.85 0)
 			(effects
 				(font
@@ -25710,7 +25710,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-4.7KGRCT-ND"
 			(at 262.89 69.85 0)
 			(effects
 				(font
@@ -25719,7 +25719,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 262.89 69.85 0)
 			(effects
 				(font
@@ -25728,7 +25728,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "RC0603JR-074K7L"
 			(at 262.89 69.85 0)
 			(effects
 				(font
@@ -25892,7 +25892,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CONN HEADER VERT 6POS 2.54MM"
 			(at 242.57 147.32 0)
 			(effects
 				(font
@@ -25901,7 +25901,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 242.57 147.32 0)
 			(effects
 				(font
@@ -25910,7 +25910,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "732-5295-ND"
 			(at 242.57 147.32 0)
 			(effects
 				(font
@@ -25919,7 +25919,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Würth Elektronik"
 			(at 242.57 147.32 0)
 			(effects
 				(font
@@ -25928,7 +25928,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "61300621121"
 			(at 242.57 147.32 0)
 			(effects
 				(font
@@ -26033,7 +26033,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CAP CER 0.1UF 16V X7R 0603"
 			(at 120.65 144.78 0)
 			(effects
 				(font
@@ -26042,7 +26042,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 120.65 144.78 0)
 			(effects
 				(font
@@ -26051,7 +26051,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-1088-1-ND"
 			(at 120.65 144.78 0)
 			(effects
 				(font
@@ -26060,7 +26060,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 120.65 144.78 0)
 			(effects
 				(font
@@ -26069,7 +26069,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "CC0603KRX7R7BB104"
 			(at 120.65 144.78 0)
 			(effects
 				(font
@@ -26235,7 +26235,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "4.7 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film"
 			(at 242.57 54.61 0)
 			(effects
 				(font
@@ -26244,7 +26244,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 242.57 54.61 0)
 			(effects
 				(font
@@ -26253,7 +26253,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-4.7KGRCT-ND"
 			(at 242.57 54.61 0)
 			(effects
 				(font
@@ -26262,7 +26262,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 242.57 54.61 0)
 			(effects
 				(font
@@ -26271,7 +26271,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "RC0603JR-074K7L"
 			(at 242.57 54.61 0)
 			(effects
 				(font
@@ -26545,7 +26545,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "50Ω"
 			(at 234.95 30.48 90)
 			(effects
 				(font
@@ -26580,7 +26580,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "50 Ohms ±0.1% 0.52W Chip Resistor 1206 (3216 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thin Film"
 			(at 234.95 33.02 90)
 			(effects
 				(font
@@ -26589,7 +26589,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 234.95 33.02 90)
 			(effects
 				(font
@@ -26598,7 +26598,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "541-TNPW120650R0BEENCT-ND"
 			(at 234.95 33.02 90)
 			(effects
 				(font
@@ -26607,7 +26607,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "Vishay Dale"
 			(at 234.95 33.02 90)
 			(effects
 				(font
@@ -26616,7 +26616,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "TNPW120650R0BEEN"
 			(at 234.95 33.02 90)
 			(effects
 				(font
@@ -26852,7 +26852,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "5.1 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film"
 			(at 71.12 48.26 0)
 			(effects
 				(font
@@ -26861,7 +26861,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 71.12 48.26 0)
 			(effects
 				(font
@@ -26870,7 +26870,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-5.10KHRCT-ND"
 			(at 71.12 48.26 0)
 			(effects
 				(font
@@ -26879,7 +26879,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 71.12 48.26 0)
 			(effects
 				(font
@@ -26888,7 +26888,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "RC0603FR-075K1L"
 			(at 71.12 48.26 0)
 			(effects
 				(font
@@ -27053,7 +27053,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" ""
+		(property "Desc" "CAP CER 0.1UF 16V X7R 0603"
 			(at 130.81 41.91 0)
 			(effects
 				(font
@@ -27062,7 +27062,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist" ""
+		(property "Dist" "Digikey"
 			(at 130.81 41.91 0)
 			(effects
 				(font
@@ -27071,7 +27071,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" ""
+		(property "Dist PN" "311-1088-1-ND"
 			(at 130.81 41.91 0)
 			(effects
 				(font
@@ -27080,7 +27080,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" ""
+		(property "Mfr" "YAGEO"
 			(at 130.81 41.91 0)
 			(effects
 				(font
@@ -27089,7 +27089,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" ""
+		(property "Mfr PN" "CC0603KRX7R7BB104"
 			(at 130.81 41.91 0)
 			(effects
 				(font
