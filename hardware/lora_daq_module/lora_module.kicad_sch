@@ -21255,7 +21255,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_Molex_105450-0101"
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
 			(at 39.37 54.61 0)
 			(effects
 				(font
@@ -21282,7 +21282,7 @@
 				(hide yes)
 			)
 		)
-		(property "Desc" "CONN RCP USB3.1 TYPEC 24P SMD RA"
+		(property "Desc" "USB-C (USB TYPE-C) USB 2.0 Receptacle Connector 24 (16+8 Dummy) Position Surface Mount, Right Angle; Through Hole"
 			(at 35.56 54.61 0)
 			(effects
 				(font
@@ -21300,7 +21300,7 @@
 				(hide yes)
 			)
 		)
-		(property "Dist PN" "WM12856CT-ND"
+		(property "Dist PN" "2073-USB4105-GF-A-120CT-ND"
 			(at 35.56 54.61 0)
 			(effects
 				(font
@@ -21309,7 +21309,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr" "Molex"
+		(property "Mfr" "GCT"
 			(at 35.56 54.61 0)
 			(effects
 				(font
@@ -21318,7 +21318,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr PN" "1054500101"
+		(property "Mfr PN" "USB4105-GF-A-120"
 			(at 35.56 54.61 0)
 			(effects
 				(font
