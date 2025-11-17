@@ -241,28 +241,43 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Analog_ADC:ADS1115IDGS"
+		(symbol "Analog_ADC:ADS1110"
+			(pin_names
+				(offset 1.016)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "U"
-				(at 2.54 13.97 0)
+				(at -7.62 8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Value" "ADS1115IDGS"
-				(at 7.62 11.43 0)
+			(property "Value" "ADS1110"
+				(at 1.27 8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Footprint" "Package_SO:TSSOP-10_3x3mm_P0.5mm"
-				(at 0 -12.7 0)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+				(at 11.43 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ads1110.pdf"
+				(at -7.62 8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -270,16 +285,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ads1113.pdf"
-				(at -1.27 -22.86 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Ultra-Small, Low-Power, I2C-Compatible, 860-SPS, 16-Bit ADCs With Internal Reference, Oscillator, and Programmable Comparator, VSSOP-10"
+			(property "Description" "16 Bit Analog to Digital converter with on board reference"
 				(at 0 0 0)
 				(effects
 					(font
@@ -288,7 +294,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "16 bit 4 channel I2C ADC"
+			(property "ki_keywords" "16 Bit Analog to digital converter ADC"
 				(at 0 0 0)
 				(effects
 					(font
@@ -297,7 +303,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "TSSOP*3x3mm*P0.5mm*"
+			(property "ki_fp_filters" "SOT?23*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -306,9 +312,9 @@
 					(hide yes)
 				)
 			)
-			(symbol "ADS1115IDGS_0_1"
+			(symbol "ADS1110_0_1"
 				(rectangle
-					(start -7.62 10.16)
+					(start -7.62 7.62)
 					(end 7.62 -7.62)
 					(stroke
 						(width 0.254)
@@ -319,36 +325,18 @@
 					)
 				)
 			)
-			(symbol "ADS1115IDGS_1_1"
+			(symbol "ADS1110_1_1"
 				(pin input line
 					(at -10.16 2.54 0)
 					(length 2.54)
-					(name "AIN0"
+					(name "VIN+"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -10.16 0 0)
-					(length 2.54)
-					(name "AIN1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -359,7 +347,7 @@
 				(pin input line
 					(at -10.16 -2.54 0)
 					(length 2.54)
-					(name "AIN2"
+					(name "VIN-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -374,26 +362,8 @@
 						)
 					)
 				)
-				(pin input line
-					(at -10.16 -5.08 0)
-					(length 2.54)
-					(name "AIN3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin power_in line
-					(at 0 12.7 270)
+					(at 0 10.16 270)
 					(length 2.54)
 					(name "VDD"
 						(effects
@@ -402,7 +372,7 @@
 							)
 						)
 					)
-					(number "8"
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -420,24 +390,6 @@
 							)
 						)
 					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 10.16 5.08 180)
-					(length 2.54)
-					(name "ALERT/RDY"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
 					(number "2"
 						(effects
 							(font
@@ -447,7 +399,7 @@
 					)
 				)
 				(pin input line
-					(at 10.16 0 180)
+					(at 10.16 2.54 180)
 					(length 2.54)
 					(name "SCL"
 						(effects
@@ -456,7 +408,7 @@
 							)
 						)
 					)
-					(number "10"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -474,25 +426,7 @@
 							)
 						)
 					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 10.16 -5.08 180)
-					(length 2.54)
-					(name "ADDR"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1745,28 +1679,6 @@
 		(color 0 0 0 0)
 		(uuid "fb266563-d085-455c-aedc-59fcb2bad56f")
 	)
-	(no_connect
-		(at 176.53 106.68)
-		(uuid "7f5784d3-d937-45b6-bbdb-573f72375016")
-	)
-	(no_connect
-		(at 176.53 111.76)
-		(uuid "dbfe4a35-d58c-4090-bbf6-0cc4568c82f7")
-	)
-	(no_connect
-		(at 176.53 109.22)
-		(uuid "e6f5802e-826b-46df-86b2-8d3d2b84f702")
-	)
-	(wire
-		(pts
-			(xy 186.69 92.71) (xy 186.69 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "000f2646-2933-40af-b7b2-52fbfdb83d6f")
-	)
 	(wire
 		(pts
 			(xy 156.21 86.36) (xy 154.94 86.36)
@@ -1796,16 +1708,6 @@
 			(type default)
 		)
 		(uuid "1eed4c12-de16-412b-8e7d-6098b3551551")
-	)
-	(wire
-		(pts
-			(xy 196.85 101.6) (xy 207.01 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "20ec363f-fc03-4e30-a057-94531b894627")
 	)
 	(wire
 		(pts
@@ -1849,6 +1751,16 @@
 	)
 	(wire
 		(pts
+			(xy 176.53 109.22) (xy 176.53 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4dcdc18b-8f3f-488c-96d2-ec6f7dc97853")
+	)
+	(wire
+		(pts
 			(xy 151.13 116.84) (xy 170.18 116.84)
 		)
 		(stroke
@@ -1856,6 +1768,16 @@
 			(type default)
 		)
 		(uuid "552a9ee9-9537-454b-934c-b2983d5b5d05")
+	)
+	(wire
+		(pts
+			(xy 186.69 92.71) (xy 186.69 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55b72b92-fe22-4950-9a1c-e193ab0a7ea1")
 	)
 	(wire
 		(pts
@@ -1886,6 +1808,16 @@
 			(type default)
 		)
 		(uuid "5ce612ca-be8e-40c1-9a93-88c5f2f5001c")
+	)
+	(wire
+		(pts
+			(xy 176.53 118.11) (xy 186.69 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5db2794d-a336-48e2-bf83-235730655306")
 	)
 	(wire
 		(pts
@@ -1969,16 +1901,6 @@
 	)
 	(wire
 		(pts
-			(xy 196.85 118.11) (xy 186.69 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "790528a1-6ca3-41c4-a72d-36d8ae2dbb30")
-	)
-	(wire
-		(pts
 			(xy 138.43 86.36) (xy 138.43 87.63)
 		)
 		(stroke
@@ -1989,7 +1911,7 @@
 	)
 	(wire
 		(pts
-			(xy 196.85 106.68) (xy 207.01 106.68)
+			(xy 196.85 104.14) (xy 207.01 104.14)
 		)
 		(stroke
 			(width 0)
@@ -2079,16 +2001,6 @@
 	)
 	(wire
 		(pts
-			(xy 196.85 111.76) (xy 196.85 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dba01c95-053e-4c46-8bb6-d814e24713ed")
-	)
-	(wire
-		(pts
 			(xy 106.68 109.22) (xy 109.22 109.22)
 		)
 		(stroke
@@ -2167,28 +2079,6 @@
 		)
 		(uuid "74dadc24-2fd4-40b1-aac2-92e8d7a27754")
 	)
-	(global_label "ADC_ALRT"
-		(shape input)
-		(at 207.01 101.6 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "23fc407e-d412-4ff5-8ea1-3aaa5d8b0b4d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 218.9457 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "SDA"
 		(shape bidirectional)
 		(at 207.01 109.22 0)
@@ -2213,7 +2103,7 @@
 	)
 	(global_label "SCL"
 		(shape bidirectional)
-		(at 207.01 106.68 0)
+		(at 207.01 104.14 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2223,7 +2113,7 @@
 		)
 		(uuid "565f6ef3-6cbd-4ed7-9b19-a8358e316948")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 214.6141 106.68 0)
+			(at 214.6141 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3296,73 +3186,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 157.48 96.52 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6fa247ae-c4c0-414f-9dac-6383e80ea0b2")
-		(property "Reference" "#PWR04"
-			(at 157.48 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 160.02 95.25 0)
-			(effects
-				(font
-					(size 0.762 0.762)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 157.48 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 157.48 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 157.48 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "10bd507a-3659-47cc-bac7-620695b7aa53")
-		)
-		(instances
-			(project ""
-				(path "/3a75d17e-6505-4097-95c7-feffd430343e/49d314b7-6ff8-4bd4-ae0d-0515c71c4ac4"
-					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 175.26 92.71 0)
 		(unit 1)
@@ -3553,6 +3376,72 @@
 			(project ""
 				(path "/3a75d17e-6505-4097-95c7-feffd430343e/49d314b7-6ff8-4bd4-ae0d-0515c71c4ac4"
 					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 156.21 85.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8d294db6-af26-445f-9b54-662041d16106")
+		(property "Reference" "#PWR03"
+			(at 156.21 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 156.21 80.01 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 156.21 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 156.21 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 156.21 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c6c9e67e-2f9f-4790-bb14-6b5137024bba")
+		)
+		(instances
+			(project "lora_daq_module"
+				(path "/3a75d17e-6505-4097-95c7-feffd430343e/49d314b7-6ff8-4bd4-ae0d-0515c71c4ac4"
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -3891,7 +3780,73 @@
 		)
 	)
 	(symbol
-		(lib_id "Analog_ADC:ADS1115IDGS")
+		(lib_id "power:+3.3V")
+		(at 157.48 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b28fdbf2-c41c-4063-899c-5922db02edcc")
+		(property "Reference" "#PWR04"
+			(at 157.48 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 157.48 91.44 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 157.48 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 157.48 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0b11219d-2349-4ea2-bd8f-00835cf3321d")
+		)
+		(instances
+			(project "lora_daq_module"
+				(path "/3a75d17e-6505-4097-95c7-feffd430343e/49d314b7-6ff8-4bd4-ae0d-0515c71c4ac4"
+					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Analog_ADC:ADS1110")
 		(at 186.69 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3901,15 +3856,6 @@
 		(fields_autoplaced yes)
 		(uuid "c7cf6f10-cb45-4f77-9651-3a090f5bb9d7")
 		(property "Reference" "U2"
-			(at 188.8333 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "ADS1110A0IDBVR"
 			(at 188.8333 93.98 0)
 			(effects
 				(font
@@ -3918,8 +3864,27 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6_Handsoldering"
-			(at 186.69 119.38 0)
+		(property "Value" "ADS1110A0IDBVR"
+			(at 188.8333 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+			(at 198.12 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ads1110.pdf"
+			(at 179.07 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3927,16 +3892,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ads1113.pdf"
-			(at 185.42 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Ultra-Small, Low-Power, I2C-Compatible, 860-SPS, 16-Bit ADCs With Internal Reference, Oscillator, and Programmable Comparator, VSSOP-10"
+		(property "Description" "16 Bit Analog to Digital converter with on board reference"
 			(at 186.69 106.68 0)
 			(effects
 				(font
@@ -4002,26 +3958,14 @@
 		(pin "4"
 			(uuid "ad645c03-758f-43a3-a571-3911ad3e7c16")
 		)
-		(pin "7"
-			(uuid "bbc30952-bf99-4e58-b5c6-559eb173880b")
-		)
 		(pin "5"
 			(uuid "3765afd8-6f71-450b-be1e-174d020b859e")
-		)
-		(pin "10"
-			(uuid "f526e5fc-fae8-4aa1-8850-6dfbd8beaf57")
 		)
 		(pin "2"
 			(uuid "d5050b55-9fc4-48b0-b6f9-8cf542e9fd7a")
 		)
 		(pin "3"
 			(uuid "15e3a535-6770-4bd7-b1b0-534d8027292c")
-		)
-		(pin "8"
-			(uuid "e82e72d3-acd5-434d-848f-5f38790858d6")
-		)
-		(pin "9"
-			(uuid "fa77dfba-f0f5-49c8-bfdc-9f0e7caf467c")
 		)
 		(pin "1"
 			(uuid "57935740-9d85-4faf-8407-fc7bc17af0d9")
@@ -4099,73 +4043,6 @@
 			(project ""
 				(path "/3a75d17e-6505-4097-95c7-feffd430343e/49d314b7-6ff8-4bd4-ae0d-0515c71c4ac4"
 					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 156.21 85.09 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e1d5ad53-aff3-43bc-aac1-61553d733ade")
-		(property "Reference" "#PWR03"
-			(at 156.21 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 158.75 83.82 0)
-			(effects
-				(font
-					(size 0.762 0.762)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 156.21 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 156.21 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 156.21 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "72674469-fada-4306-9df4-f0a534ad0e7e")
-		)
-		(instances
-			(project ""
-				(path "/3a75d17e-6505-4097-95c7-feffd430343e/49d314b7-6ff8-4bd4-ae0d-0515c71c4ac4"
-					(reference "#PWR03")
 					(unit 1)
 				)
 			)
