@@ -58,7 +58,32 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "footprint_type_mismatch|133350000|97349000|ec938652-4416-46e7-912e-78debc882311|00000000-0000-0000-0000-000000000000",
+          "pad is th and smd"
+        ],
+        [
+          "footprint_type_mismatch|155900000|101480000|6319e2a5-f757-4449-88f1-43bc66a6c4a2|00000000-0000-0000-0000-000000000000",
+          "component is SMD"
+        ],
+        [
+          "footprint_type_mismatch|172916205|105729460|5361076d-8470-4a7c-a082-6eadb002a99b|00000000-0000-0000-0000-000000000000",
+          "pad is th and smd"
+        ],
+        [
+          "unconnected_items|110236000|108712000|F.Cu|4|3f52aacc-1e55-4a8d-8421-bb9e5f3fbd05|25ae0665-764a-4b36-b76e-53d7c240bc4a",
+          "usb shield connects all pth"
+        ],
+        [
+          "unconnected_items|114416000|100072000|F.Cu|4|781c3ce3-a87d-40b7-a61b-15ea82c6b677|25ae0665-764a-4b36-b76e-53d7c240bc4a",
+          "explicit connection not needed, usb shield is one piece"
+        ],
+        [
+          "unconnected_items|114416000|100072000|F.Cu|4|781c3ce3-a87d-40b7-a61b-15ea82c6b677|9df5f228-5fc7-4aab-8764-4b593ec38039",
+          "usb shield connects to all pth"
+        ]
+      ],
       "meta": {
         "version": 2
       },
