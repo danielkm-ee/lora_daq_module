@@ -167,3 +167,28 @@ For the 3.3uH inductor used on the buck/boost tps63002 I am using the Coilcraft 
 Another exception I've made here is the resistor rule mentioned earlier, I am using an automotive grade 50Ω resistor at the pi network at the antenna, though this may be overkill. For refrence, the price difference is about 6x, where typical resistors are 10 cents, this one is 62 cents. like i said,,, maybe overkill!
 
 Another area we'll definitely want to explore is connectors, particularly headers. Currently I'm ordering pre-cut pin headers in the array sizes we need, but since we're hand-soldering these down that's completely unnecessary. May be cheaper to just order a pair of long 1-row and 2-row headers to cut down to size by ourselves.
+
+# antenna layout
+I've looked into the microscrip design for the antenna connector, had some discussion with Maxwell, and consulted online sources and came up with the following options:
+
+Using the microstrip line calculator on KiCAD with the following parameters:
+| er | tan(delta) | rho   | H     | H(top) | T   | ur | freq  | L  | Z0 |
+|----|------------|-------|-------|--------|-----|----|-------|----|----|
+|3.67| 0.012      |1.72e-8|.2021mm| .2021mm|.0432| 1  | 880MHz|10mm|50Ω |
+
+I got W = 0.486816 which I rounded to 0.487 for the microstrip trace width.
+
+We have two options, either trust the microstrip working, or adding a pi network for impedance matching if we run into issues.
+
+## Keeping the pi network
+to keep the pi network, we will have to use 0402 pads and place them directly in line with the microstrip. They have to be as close to the 0.487 trace width as possible, or they present an impedance discontinuity.
+
+This complicates things in general, so the other option is...
+
+## Ditch the pi network
+Just lay out the microstrip and bet things will work out okay. Worst case we can cut open some traces and try our best to do something about an impedance mismatch. Based on timeline, this may be our best option.
+
+
+# Ground gap and via fencing
+Back to the general layout decisions, I've used the convention that the ground gap should be H1+H2, which for our board is 0.4042mm, and our via fencing should be spaced no more than (1/10)λ = (1/10)(1/(2πf))*(3e8) = 0.005425m or 6mm.
+I've applied both of these rules to the antenna layout.
