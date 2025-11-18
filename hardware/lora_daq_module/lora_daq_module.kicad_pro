@@ -77,11 +77,11 @@
         ],
         [
           "unconnected_items|114416000|100072000|F.Cu|4|781c3ce3-a87d-40b7-a61b-15ea82c6b677|25ae0665-764a-4b36-b76e-53d7c240bc4a",
-          "explicit connection not needed, usb shield is one piece"
+          "usb shield connects to all pth"
         ],
         [
           "unconnected_items|114416000|100072000|F.Cu|4|781c3ce3-a87d-40b7-a61b-15ea82c6b677|9df5f228-5fc7-4aab-8764-4b593ec38039",
-          "usb shield connects to all pth"
+          "explicit connection not needed, usb shield is one piece"
         ]
       ],
       "meta": {
