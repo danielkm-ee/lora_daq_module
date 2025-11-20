@@ -1,0 +1,21 @@
+#include "main.h"
+#include "stm32wlxx_hal.h"
+
+int main(void)
+{
+    HAL_Init();
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+
+    GPIO_InitTypeDef gpio = {0};
+    gpio.Pin = GPIO_PIN_5;
+    gpio.Mode = GPIO_MODE_OUTPUT_PP;
+    gpio.Pull = GPIO_NOPULL;
+    gpio.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOB, &gpio);
+
+    while (1)
+    {
+        HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_5);
+        HAL_Delay(1);
+    }
+}
