@@ -3035,7 +3035,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 58.42) (xy 60.96 58.42)
+			(xy 17.78 58.42) (xy 60.96 58.42)
 		)
 		(stroke
 			(width 0)
@@ -3115,7 +3115,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 36.83) (xy 29.21 58.42)
+			(xy 17.78 36.83) (xy 17.78 58.42)
 		)
 		(stroke
 			(width 0)
@@ -3285,6 +3285,16 @@
 	)
 	(wire
 		(pts
+			(xy 31.75 135.89) (xy 35.56 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "542fdd0d-dc43-4418-8f24-8974b62b178b")
+	)
+	(wire
+		(pts
 			(xy 167.64 48.26) (xy 167.64 49.53)
 		)
 		(stroke
@@ -3395,7 +3405,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 36.83) (xy 38.1 39.37)
+			(xy 25.4 36.83) (xy 25.4 39.37)
 		)
 		(stroke
 			(width 0)
@@ -3455,7 +3465,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 132.08) (xy 30.48 135.89)
+			(xy 22.86 132.08) (xy 22.86 135.89)
 		)
 		(stroke
 			(width 0)
@@ -3685,6 +3695,16 @@
 	)
 	(wire
 		(pts
+			(xy 25.4 39.37) (xy 30.48 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c9b399d-2af4-4f5e-8a7b-fd34de26b687")
+	)
+	(wire
+		(pts
 			(xy 50.8 93.98) (xy 50.8 95.25)
 		)
 		(stroke
@@ -3695,7 +3715,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 135.89) (xy 35.56 135.89)
+			(xy 22.86 135.89) (xy 26.67 135.89)
 		)
 		(stroke
 			(width 0)
@@ -3795,6 +3815,16 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 86.36) (xy 106.68 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "afc9a1c4-069b-4bed-aefd-c6f9377f234e")
+	)
+	(wire
+		(pts
 			(xy 71.12 114.3) (xy 71.12 113.03)
 		)
 		(stroke
@@ -3865,7 +3895,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 87.63) (xy 92.71 87.63)
+			(xy 106.68 87.63) (xy 102.87 87.63)
 		)
 		(stroke
 			(width 0)
@@ -3915,6 +3945,16 @@
 	)
 	(wire
 		(pts
+			(xy 97.79 87.63) (xy 92.71 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c85660fc-2e53-4e06-9e25-3baf09fc9155")
+	)
+	(wire
+		(pts
 			(xy 115.57 156.21) (xy 119.38 156.21)
 		)
 		(stroke
@@ -3932,16 +3972,6 @@
 			(type default)
 		)
 		(uuid "cd0dcec3-af86-411b-bb19-0098da50328c")
-	)
-	(wire
-		(pts
-			(xy 93.98 86.36) (xy 93.98 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d2c09d43-8eeb-4aed-9967-3091e98355ad")
 	)
 	(wire
 		(pts
@@ -4035,6 +4065,16 @@
 	)
 	(wire
 		(pts
+			(xy 35.56 39.37) (xy 38.1 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f64268ba-5bd5-490a-866c-62ffd9cb50e0")
+	)
+	(wire
+		(pts
 			(xy 55.88 105.41) (xy 55.88 107.95)
 		)
 		(stroke
@@ -4077,7 +4117,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 30.48 132.08 0)
+		(at 22.86 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4086,7 +4126,7 @@
 		(fields_autoplaced yes)
 		(uuid "02cf70c0-d700-43ef-afc5-ac523ff7174a")
 		(property "Reference" "#PWR062"
-			(at 30.48 135.89 0)
+			(at 22.86 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4095,7 +4135,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 30.48 127 0)
+			(at 22.86 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4103,7 +4143,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 30.48 132.08 0)
+			(at 22.86 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4112,7 +4152,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 30.48 132.08 0)
+			(at 22.86 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4121,7 +4161,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 30.48 132.08 0)
+			(at 22.86 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4337,7 +4377,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 93.98 86.36 0)
+		(at 106.68 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4346,7 +4386,7 @@
 		(fields_autoplaced yes)
 		(uuid "0769539b-d200-48d0-aa61-fdb78424a922")
 		(property "Reference" "#PWR058"
-			(at 93.98 90.17 0)
+			(at 106.68 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4355,7 +4395,7 @@
 			)
 		)
 		(property "Value" "+5V_bat"
-			(at 96.52 85.0899 0)
+			(at 109.22 85.0899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4364,7 +4404,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 93.98 86.36 0)
+			(at 106.68 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4373,7 +4413,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 93.98 86.36 0)
+			(at 106.68 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4382,7 +4422,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 93.98 86.36 0)
+			(at 106.68 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5692,6 +5732,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 29.21 135.89 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "501e1b8b-e481-4612-8ea7-86e1c7fb0ee4")
+		(property "Reference" "R22"
+			(at 29.21 129.54 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 29.21 132.08 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
+			(at 29.21 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 29.21 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 29.21 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9f037777-103d-498f-982e-e6c75d45f9ff")
+		)
+		(pin "2"
+			(uuid "5f960cc8-c784-447b-a0c0-1ac76e40f147")
+		)
+		(instances
+			(project "lora_daq_module"
+				(path "/3a75d17e-6505-4097-95c7-feffd430343e/ef115c0a-04f9-49fd-8226-937092a3293c"
+					(reference "R22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 142.24 39.37 0)
 		(unit 1)
@@ -6765,7 +6873,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 38.1 36.83 0)
+		(at 25.4 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6774,7 +6882,7 @@
 		(fields_autoplaced yes)
 		(uuid "8031f054-5584-469c-8b5c-fd816a716f41")
 		(property "Reference" "#PWR045"
-			(at 38.1 40.64 0)
+			(at 25.4 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6783,7 +6891,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 38.1 31.75 0)
+			(at 25.4 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6791,7 +6899,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 38.1 36.83 0)
+			(at 25.4 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6800,7 +6908,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 38.1 36.83 0)
+			(at 25.4 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6809,7 +6917,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 38.1 36.83 0)
+			(at 25.4 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7558,7 +7666,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 29.21 36.83 0)
+		(at 17.78 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7566,7 +7674,7 @@
 		(dnp no)
 		(uuid "9652c775-ef6a-42ce-9af0-7506251e0996")
 		(property "Reference" "#PWR044"
-			(at 29.21 40.64 0)
+			(at 17.78 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7575,7 +7683,7 @@
 			)
 		)
 		(property "Value" "+5V_bat"
-			(at 29.21 31.75 0)
+			(at 17.78 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7583,7 +7691,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 29.21 36.83 0)
+			(at 17.78 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7592,7 +7700,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 29.21 36.83 0)
+			(at 17.78 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7601,7 +7709,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 29.21 36.83 0)
+			(at 17.78 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7986,6 +8094,74 @@
 			(project "power_management"
 				(path "/a033bf7c-d1df-40b4-980c-62e21982940e"
 					(reference "U?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 100.33 87.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a6185177-b499-420a-9bd2-4658ecaa9206")
+		(property "Reference" "R21"
+			(at 100.33 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 100.33 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
+			(at 100.33 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 100.33 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 100.33 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9e3cc8cc-bf7a-474e-a263-c7ea5665b0a2")
+		)
+		(pin "2"
+			(uuid "676a2dd4-1e19-4a12-87fa-d2a0960599ad")
+		)
+		(instances
+			(project ""
+				(path "/3a75d17e-6505-4097-95c7-feffd430343e/ef115c0a-04f9-49fd-8226-937092a3293c"
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -9032,6 +9208,74 @@
 			(project ""
 				(path "/3a75d17e-6505-4097-95c7-feffd430343e/ef115c0a-04f9-49fd-8226-937092a3293c"
 					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 33.02 39.37 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d6b64996-8d20-465d-b0dc-cd3fec9c08bf")
+		(property "Reference" "R23"
+			(at 33.02 33.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 33.02 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
+			(at 33.02 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 33.02 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 33.02 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0993a1c1-2cb1-4fc9-af14-9b38d861f449")
+		)
+		(pin "2"
+			(uuid "bccb1a5d-42d1-48a1-bbad-48159a08dff7")
+		)
+		(instances
+			(project "lora_daq_module"
+				(path "/3a75d17e-6505-4097-95c7-feffd430343e/ef115c0a-04f9-49fd-8226-937092a3293c"
+					(reference "R23")
 					(unit 1)
 				)
 			)
