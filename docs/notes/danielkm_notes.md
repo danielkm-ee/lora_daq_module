@@ -192,3 +192,26 @@ Just lay out the microstrip and bet things will work out okay. Worst case we can
 # Ground gap and via fencing
 Back to the general layout decisions, I've used the convention that the ground gap should be H1+H2, which for our board is 0.4042mm, and our via fencing should be spaced no more than (1/10)λ = (1/10)(1/(2πf))*(3e8) = 0.005425m or 6mm.
 I've applied both of these rules to the antenna layout.
+
+# Final design notes, changes, checkoffs
+I've added 1812 resistors at the inputs and outputs of the power circuits. One from VBUS to the MCP7338, another from the battery to the buck/boost, and a final one at the input of VBUS to the power mux. 
+Final failsafes for power will be to remove the 0Ω to the power mux, then mod wire the VBUS pad to the LDO. We would also want to desolder the power mux I believe.
+
+I've fixed the LEDs for the battery charger, originally I made up their indicators but now we have a green led at STAT2 which indicates full/stopped charging. Amber at stat1 indicates charging in progress, and red at PG indicates power is on/off.
+
+I added a 3 pin JST connector for the i2c bus and removed the testpoints for the sda and scl to save room.
+
+I added the pi network back in and set up the board for a 1.6mm 4 layer jlcpcb board with 1oz top and 10z middle layers.
+
+I also replaced the two pin header used for the battery with a two pin jst receptacle.
+
+I labeled all test points, shrunk reference texts to declutter the board, and made necessary modifications to flood planes and traces to facilitate power jumpers.
+
+I added a reset switch to restart the microprocessor that can be left unsoldered if desired.
+
+The ADC input filter has been rearranged and redesigned according to andrews instructions,
+the buffer has been moved to the input, the voltage divider was removed and the power rails were changed to +3.3V. I put the anti-aliasing low-pass filter at the output of the buffer and used a 47Ω and 4.7uF to set the cutoff at 720Hz. I used the 47Ω with the aim of having a low output impedance.
+
+I updated the antenna trace width to 0.49mm according to the updated jlc pcb parameters, I then added the pi impedance matching network using 0402 components. They are a bit large, though I believe we may be close enough here and wanted to bring the option back in incase the jlc impedance calculations aren't great.
+
+
