@@ -1,7 +1,7 @@
 # LoRA DAQ Node
 For our Electrical and Computer Engineering practicum at Portland State for 2025 we have developed a LoRA based data acquisition node that can be used for data collection and monitoring systems over large areas.
 
-![](./docs/lora_daq_module_final_top.png)
+![3d model of lora board top](./docs/lora_daq_module_final_top.png)
 
 This board is powered by the Seeed Studios Wio-E5 LoRA module for use with it's designated antenna.
 
@@ -30,4 +30,5 @@ List of Peripherals
 
 > All team members contributed to every aspect of the project, going beyond the general roles specified here.
 
-> > *Portland State University ECE411 Practicum project, Fall 2025*
+----
+*Portland State University ECE411 Practicum project, Fall 2025*
