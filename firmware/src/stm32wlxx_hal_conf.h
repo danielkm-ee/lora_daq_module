@@ -1,4 +1,3 @@
-// from lora_daq_module\firmware\lib\STM32WLxx_HAL_Driver\Inc\stm32wlxx_hal_conf_template.h
 /**
   ******************************************************************************
   * @file    stm32wlxx_hal_conf.h
@@ -7,12 +6,13 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
@@ -34,29 +34,29 @@
   */
 #define HAL_MODULE_ENABLED
 #define HAL_ADC_MODULE_ENABLED
-#define HAL_COMP_MODULE_ENABLED
-#define HAL_CRC_MODULE_ENABLED
-#define HAL_CRYP_MODULE_ENABLED
-#define HAL_DAC_MODULE_ENABLED
-#define HAL_GTZC_MODULE_ENABLED
-#define HAL_HSEM_MODULE_ENABLED
-#define HAL_I2C_MODULE_ENABLED
-#define HAL_I2S_MODULE_ENABLED
-#define HAL_IPCC_MODULE_ENABLED
-#define HAL_IRDA_MODULE_ENABLED
-#define HAL_IWDG_MODULE_ENABLED
-#define HAL_LPTIM_MODULE_ENABLED
-#define HAL_PKA_MODULE_ENABLED
-#define HAL_RNG_MODULE_ENABLED
+/*#define HAL_COMP_MODULE_ENABLED   */
+/*#define HAL_CRC_MODULE_ENABLED   */
+/*#define HAL_CRYP_MODULE_ENABLED   */
+/*#define HAL_DAC_MODULE_ENABLED   */
+/*#define HAL_GTZC_MODULE_ENABLED   */
+/*#define HAL_HSEM_MODULE_ENABLED   */
+/*#define HAL_I2C_MODULE_ENABLED   */
+/*#define HAL_I2S_MODULE_ENABLED   */
+/*#define HAL_IPCC_MODULE_ENABLED   */
+/*#define HAL_IRDA_MODULE_ENABLED   */
+/*#define HAL_IWDG_MODULE_ENABLED   */
+#define HAL_LPTIM_MODULE_ENABLED   
+/*#define HAL_PKA_MODULE_ENABLED   */
+/*#define HAL_RNG_MODULE_ENABLED   */
 #define HAL_RTC_MODULE_ENABLED
-#define HAL_SMARTCARD_MODULE_ENABLED
-#define HAL_SMBUS_MODULE_ENABLED
-#define HAL_SPI_MODULE_ENABLED
+/*#define HAL_SMARTCARD_MODULE_ENABLED   */
+/*#define HAL_SMBUS_MODULE_ENABLED   */
+/*#define HAL_SPI_MODULE_ENABLED   */
 #define HAL_SUBGHZ_MODULE_ENABLED
-#define HAL_TIM_MODULE_ENABLED
+/*#define HAL_TIM_MODULE_ENABLED   */
 #define HAL_UART_MODULE_ENABLED
-#define HAL_USART_MODULE_ENABLED
-#define HAL_WWDG_MODULE_ENABLED
+/*#define HAL_USART_MODULE_ENABLED   */
+/*#define HAL_WWDG_MODULE_ENABLED   */
 #define HAL_EXTI_MODULE_ENABLED
 #define HAL_CORTEX_MODULE_ENABLED
 #define HAL_DMA_MODULE_ENABLED
@@ -150,7 +150,6 @@
 #define LSE_STARTUP_TIMEOUT                 5000UL      /*!< Time out for LSE start up, in ms */
 #endif /* LSE_STARTUP_TIMEOUT */
 
-
 /* Tip: To avoid modifying this file each time you need to use different HSE,
    ===  you can define the HSE value in your toolchain compiler preprocessor. */
 
@@ -184,7 +183,6 @@
 /* ################## CRYP peripheral configuration ########################## */
 
 #define USE_HAL_CRYP_SUSPEND_RESUME         1U
-
 
 /* Includes ------------------------------------------------------------------*/
 /**
@@ -336,3 +334,5 @@
 #endif
 
 #endif /* STM32WLxx_HAL_CONF_H */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
