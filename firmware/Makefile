@@ -46,3 +46,6 @@ clean:
 printsrc:
 	@echo "SRC_DIRS = $(SRC_DIRS)"
 	@echo "SRC = $(SRC)"
+
+flash:
+	openocd -f interface/stlink.cfg -f target/stm32wlx.cfg -c "init; halt" -c "program build/firmware.elf verify reset"

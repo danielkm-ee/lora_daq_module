@@ -15,7 +15,10 @@ int main(void)
 
     while (1)
     {
-        HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_5);
-        HAL_Delay(1);
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET); // ON
+        HAL_Delay(300);
+
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);   // OFF
+        HAL_Delay(300);
     }
 }
