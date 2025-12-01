@@ -46,6 +46,9 @@ int main(void)
     UART_Debug_Println("Sample interval: 1 sec, TX interval: 1 sec");
     UART_Debug_Println("System ready!");
     // UART_SendString("System started\r\n");
+
+    // test lora data
+    const uint8_t test_msg[] = "hello lora";
     
     while (1)
     {
@@ -63,7 +66,7 @@ int main(void)
             UART_Debug_Println("Transmitting...");
             // Send LoRa
             /* TODO: send actual data */
-            LoRa_App_SendData(NULL, 0);  // Placeholder
+            LoRa_App_SendData(test_msg, sizeof(test_msg));  // Placeholder
             UART_Debug_Println("Transmission complete.");
         }
         

@@ -51,7 +51,7 @@ To learn how a specific peripheral works, refer to the HAL driver source files l
 `firmware\lib\STM32WLxx_HAL_Driver\Src`
 
 ### File Structure of Src
-I think our initial goal for firmware/src files struture is to put all the header and source code under one folder, but to make clearer for each module we develop, I lay out our code strucute like:
+I think our initial idea for the `firmware/src` files struture is to put all the header and source code under one folder, but to make clearer for each module we develop, I lay out our code structure as follows:
 ```
 src/
 ├── app/
@@ -83,6 +83,11 @@ src/
 ├── Other system configure files... (Placement TBD)
 ```
 
+#### TODO:
+- [x] cleanup structure for contribution and reviews
+- [] cleanup the external relied system configuration files
+- [] better code structure
+
 ### LoRa module
 The LoRa module was built using the reference project at
 https://github.com/Seeed-Studio/LoRaWan-E5-Node/tree/main/Projects/Applications/LoRaWAN/LoRaWAN_End_Node  
@@ -95,6 +100,11 @@ I also tried to understand the original Seeed code to get more understanding for
 
 All of the LoRa application code is organized under `src/lora`.
 
+#### TODO:
+- [x] Test the signal physically transmitted
+- [] Test the signal can be decode from other LoRa board
+
+
 ### Scheduling Interrupt
 The scheduling system of transmitting and sampling for now is implemented using a timer-based interrupt driven by TIM2 timer. I abandoned initial thought for implementing FreeRTOS for such structure. (Yes, a bit complex for me - I overestimate myself and maybe not too important to consider that if we want to add more color for the firmware, but at first we should have a at least functional firmware!)
 
@@ -104,5 +114,59 @@ In the main loop, using `__WFI();` to let CPU just sleep while no interrupt.
 
 All of the scheduling code is organized under `src/scheduling`.
 
+#### TODO:
+- [x] Think of a way for low power schdeduling
+- [] Power profiling to see if the codebase really enable low power
+
+### UART Debug
+The current stage of UART is enable upon code that I took from the reference project at
+https://github.com/Seeed-Studio/LoRaWan-E5-Node/tree/main/Projects/Applications/LoRaWAN/LoRaWAN_End_Node
+
+The UART setup is handled through functions in `firmware\src\timer_if.c`(taken from example code), which has enabled the UART peripheral. Using this setup, I wrote application UART codes for serial debugging outputs.
+
+All of the UART code is organized under `src/uart`.
+
+#### TODO:
+- [x] Enable UART to debug
+- [] Using UART to see the data sampling and receiving
+
+### Sensor interface and Sensor Data
+
+#### TODO:
+- [] Enable I2C
+- [] Data structure for nessary information and transmission 
+- [] Configure sensors and ADC properly
+- [] Validate correct data acquisition
+
+### Test
+I want all the test code that everyone commits to be formatted using clang-format, and I also want testing to be driven through the Makefile.
+
+#### TODO:
+- [] enable CI test
+- [] think of unit test cases
 
 
+
+## Stage of Development
+TODO:
+- [x] Building and Flashing code structure
+- [x] Enabling LoRa
+- [] Enabling I2C
+- [] Configure ADC and digital sensor if needed
+- [x] UART debuging
+- [] Github CI test
+- [] LoRa testing
+- [] Sensor data validation
+
+### (HEAD -> firmware_init, origin/firmware_init)
+
+#### Stage commit 398cc2e363845a623673a12c9f33951d18dbbad1 
+At this stage of the commit, we are now able to enable LoRa transmission, UART debugging output, and schedule the main loop for sampling and transmitting using a timer-based interrupt. After you build the project with the Makefile and flash the firmware, you should see UART output over USB like:
+```
+Sampling...
+Transmitting...
+Transmission complete.
+```
+This repeats every 1 second. If you also connect the SMA output to a signal analyzer or an SDR, you should see the waveform dancing at 915 MHz.
+#### Stage commit 2383b4ef38c4a43d3942959597c4a2f3eaec716b
+At this stage of the commit, we have initialized the bare-metal coding structure so the firmware can be built and flashed without relying on any external tedious GUI tools. Instead, we build the code using gcc and flash it using OpenOCD. In this commit, we managed to drive the onboard LED through GPIOB PIN 5 using the official HAL driver.
