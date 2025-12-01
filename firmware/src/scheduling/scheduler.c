@@ -26,7 +26,7 @@ void Scheduler_Init(void)
     htim2.Init.Prescaler = 48000 - 1;           // Subtract 1 because hardware operation adds 1 internally
     htim2.Init.CounterMode = TIM_COUNTERMODE_UP; // Count up from 0
     htim2.Init.Period = 1000 - 1;
-    htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1; // No extra division
+    htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
     htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
     
     // Initialize timer with HAL
@@ -41,7 +41,7 @@ void Scheduler_Init(void)
         Error_Handler();
     }
     
-    // Configure NVIC (interrupt controller)
+    // Configure NVIC
     HAL_NVIC_SetPriority(TIM2_IRQn, 5, 0);  // Priority 5 (lower = higher priority)
     HAL_NVIC_EnableIRQ(TIM2_IRQn);          // Enable TIM2 interrupt
 }
