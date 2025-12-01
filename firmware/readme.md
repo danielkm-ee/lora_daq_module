@@ -18,8 +18,8 @@ openocd --version
 ### 3. Project Structure
 ```
 firmware/
-├── src/           # Application code
-├── config/        # HAL & board configuration
+├── src/           # Application code and nessary files from external repo
+├── config/        # HAL & board configuration TODO
 ├── lib/           # STM32CubeWL HAL + CMSIS
 ├── startup_stm32wle5xx.s
 ├── stm32wl.ld     # Linker script
@@ -31,9 +31,7 @@ firmware/
 make
 
 #### Flash to STM32 (via ST-Link)
-openocd -f interface/stlink.cfg -f target/stm32wlx.cfg \
-  -c "init; halt" \
-  -c "program build/firmware.elf verify reset exit"
+make flash
 
 ## Development Notes
 
