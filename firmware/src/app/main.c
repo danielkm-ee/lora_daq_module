@@ -47,7 +47,7 @@ int main(void) {
   // UART_SendString("System started\r\n");
 
   // test lora data
-  const uint8_t test_msg[] = "hello lora";
+  uint8_t test_msg[] = "hello lora";
 
   while (1) {
     if (Scheduler_ShouldSample()) {
