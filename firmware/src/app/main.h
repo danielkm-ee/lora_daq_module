@@ -3,15 +3,13 @@
 
 #ifdef __cplusplus
 
-
-
 extern "C" {
 #endif
 
 /* Private defines -----------------------------------------------------------*/
 #define RTC_N_PREDIV_S 10
-#define RTC_PREDIV_S ((1<<RTC_N_PREDIV_S)-1)
-#define RTC_PREDIV_A ((1<<(15-RTC_N_PREDIV_S))-1)
+#define RTC_PREDIV_S ((1 << RTC_N_PREDIV_S) - 1)
+#define RTC_PREDIV_A ((1 << (15 - RTC_N_PREDIV_S)) - 1)
 
 #define USART_BAUDRATE 115200
 
@@ -34,12 +32,12 @@ extern "C" {
 #define USARTx_TX_Pin GPIO_PIN_7
 #define USARTx_TX_GPIO_Port GPIOB
 
-#include "stm32wlxx_hal.h"   // Pulls in the HAL drivers
-#include "stm32wlxx_hal_conf.h"  // Ensures HAL module selection
+#include "stm32wlxx_hal.h"      // Pulls in the HAL drivers
+#include "stm32wlxx_hal_conf.h" // Ensures HAL module selection
 
 /* -------- Pin Definitions -------- */
-#define LED_PIN        GPIO_PIN_5
-#define LED_PORT       GPIOB
+#define LED_PIN GPIO_PIN_5
+#define LED_PORT GPIOB
 
 /* -------- Function Prototypes -------- */
 void Error_Handler(void);

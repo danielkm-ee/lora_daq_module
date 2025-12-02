@@ -1,21 +1,21 @@
 /**
-  ******************************************************************************
-  * @file    dma.c
-  * @brief   This file provides code for the configuration
-  *          of all the requested memory to memory DMA transfers.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    dma.c
+ * @brief   This file provides code for the configuration
+ *          of all the requested memory to memory DMA transfers.
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+ * All rights reserved.</center></h2>
+ *
+ * This software component is licensed by ST under Ultimate Liberty license
+ * SLA0044, the "License"; You may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at:
+ *                             www.st.com/SLA0044
+ *
+ ******************************************************************************
+ */
 
 /* Includes ------------------------------------------------------------------*/
 #include "dma.h"
@@ -33,10 +33,9 @@
 /* USER CODE END 1 */
 
 /**
-  * Enable DMA controller clock
-  */
-void MX_DMA_Init(void)
-{
+ * Enable DMA controller clock
+ */
+void MX_DMA_Init(void) {
 
   /* DMA controller clock enable */
   __HAL_RCC_DMAMUX1_CLK_ENABLE();
@@ -46,7 +45,6 @@ void MX_DMA_Init(void)
   /* DMA1_Channel5_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 2, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
-
 }
 
 /* USER CODE BEGIN 2 */

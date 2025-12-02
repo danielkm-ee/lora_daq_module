@@ -8,6 +8,7 @@ This project targets the **STM32WLE5** (Cortex-M4) MCU and uses a GNU-based tool
 ```bash
 sudo apt update
 sudo apt install build-essential gcc-arm-none-eabi gdb-multiarch make openocd
+sudo apt install -y clang-format
 ```
 
 ### 2. Verify Installation
@@ -28,11 +29,24 @@ firmware/
 
 ### 4. Build and Flash
 #### Build firmware
+```
 make
-
+```
 #### Flash to STM32 (via ST-Link)
+```
 make flash
+```
 
+### 5. Every time before push
+#### Run a clean build
+```
+make clean
+make
+```
+#### Auto-format your C code
+```
+make format
+```
 ## Development Notes
 
 This firmware is being developed for a LoRa-based data-acquisition system. Its main goals are to:

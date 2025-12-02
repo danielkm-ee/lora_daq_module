@@ -1,26 +1,26 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file    stm32wlxx_it.c
-  * @brief   Interrupt Service Routines.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    stm32wlxx_it.c
+ * @brief   Interrupt Service Routines.
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+ * All rights reserved.</center></h2>
+ *
+ * This software component is licensed by ST under Ultimate Liberty license
+ * SLA0044, the "License"; You may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at:
+ *                             www.st.com/SLA0044
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
 #include "stm32wlxx_it.h"
+#include "main.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
@@ -60,7 +60,7 @@ extern RTC_HandleTypeDef hrtc;
 extern SUBGHZ_HandleTypeDef hsubghz;
 extern DMA_HandleTypeDef hdma_usart1_tx;
 extern UART_HandleTypeDef huart1;
-extern TIM_HandleTypeDef htim2; 
+extern TIM_HandleTypeDef htim2;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -69,10 +69,9 @@ extern TIM_HandleTypeDef htim2;
 /*           Cortex Processor Interruption and Exception Handlers          */
 /******************************************************************************/
 /**
-  * @brief This function handles Non maskable interrupt.
-  */
-void NMI_Handler(void)
-{
+ * @brief This function handles Non maskable interrupt.
+ */
+void NMI_Handler(void) {
   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
 
   /* USER CODE END NonMaskableInt_IRQn 0 */
@@ -82,70 +81,61 @@ void NMI_Handler(void)
 }
 
 /**
-  * @brief This function handles Hard fault interrupt.
-  */
-void HardFault_Handler(void)
-{
+ * @brief This function handles Hard fault interrupt.
+ */
+void HardFault_Handler(void) {
   /* USER CODE BEGIN HardFault_IRQn 0 */
 
   /* USER CODE END HardFault_IRQn 0 */
-  while (1)
-  {
+  while (1) {
     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
     /* USER CODE END W1_HardFault_IRQn 0 */
   }
 }
 
 /**
-  * @brief This function handles Memory management fault.
-  */
-void MemManage_Handler(void)
-{
+ * @brief This function handles Memory management fault.
+ */
+void MemManage_Handler(void) {
   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
 
   /* USER CODE END MemoryManagement_IRQn 0 */
-  while (1)
-  {
+  while (1) {
     /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
     /* USER CODE END W1_MemoryManagement_IRQn 0 */
   }
 }
 
 /**
-  * @brief This function handles Prefetch fault, memory access fault.
-  */
-void BusFault_Handler(void)
-{
+ * @brief This function handles Prefetch fault, memory access fault.
+ */
+void BusFault_Handler(void) {
   /* USER CODE BEGIN BusFault_IRQn 0 */
 
   /* USER CODE END BusFault_IRQn 0 */
-  while (1)
-  {
+  while (1) {
     /* USER CODE BEGIN W1_BusFault_IRQn 0 */
     /* USER CODE END W1_BusFault_IRQn 0 */
   }
 }
 
 /**
-  * @brief This function handles Undefined instruction or illegal state.
-  */
-void UsageFault_Handler(void)
-{
+ * @brief This function handles Undefined instruction or illegal state.
+ */
+void UsageFault_Handler(void) {
   /* USER CODE BEGIN UsageFault_IRQn 0 */
 
   /* USER CODE END UsageFault_IRQn 0 */
-  while (1)
-  {
+  while (1) {
     /* USER CODE BEGIN W1_UsageFault_IRQn 0 */
     /* USER CODE END W1_UsageFault_IRQn 0 */
   }
 }
 
 /**
-  * @brief This function handles System service call via SWI instruction.
-  */
-void SVC_Handler(void)
-{
+ * @brief This function handles System service call via SWI instruction.
+ */
+void SVC_Handler(void) {
   /* USER CODE BEGIN SVCall_IRQn 0 */
 
   /* USER CODE END SVCall_IRQn 0 */
@@ -155,10 +145,9 @@ void SVC_Handler(void)
 }
 
 /**
-  * @brief This function handles Debug monitor.
-  */
-void DebugMon_Handler(void)
-{
+ * @brief This function handles Debug monitor.
+ */
+void DebugMon_Handler(void) {
   /* USER CODE BEGIN DebugMonitor_IRQn 0 */
 
   /* USER CODE END DebugMonitor_IRQn 0 */
@@ -168,10 +157,9 @@ void DebugMon_Handler(void)
 }
 
 /**
-  * @brief This function handles Pendable request for system service.
-  */
-void PendSV_Handler(void)
-{
+ * @brief This function handles Pendable request for system service.
+ */
+void PendSV_Handler(void) {
   /* USER CODE BEGIN PendSV_IRQn 0 */
 
   /* USER CODE END PendSV_IRQn 0 */
@@ -181,10 +169,9 @@ void PendSV_Handler(void)
 }
 
 /**
-  * @brief This function handles System tick timer.
-  */
-void SysTick_Handler(void)
-{
+ * @brief This function handles System tick timer.
+ */
+void SysTick_Handler(void) {
   /* USER CODE BEGIN SysTick_IRQn 0 */
 
   /* USER CODE END SysTick_IRQn 0 */
@@ -202,10 +189,10 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles RTC Tamper, RTC TimeStamp, LSECSS and RTC SSRU Interrupts.
-  */
-void TAMP_STAMP_LSECSS_SSRU_IRQHandler(void)
-{
+ * @brief This function handles RTC Tamper, RTC TimeStamp, LSECSS and RTC SSRU
+ * Interrupts.
+ */
+void TAMP_STAMP_LSECSS_SSRU_IRQHandler(void) {
   /* USER CODE BEGIN TAMP_STAMP_LSECSS_SSRU_IRQn 0 */
 
   /* USER CODE END TAMP_STAMP_LSECSS_SSRU_IRQn 0 */
@@ -216,10 +203,9 @@ void TAMP_STAMP_LSECSS_SSRU_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles EXTI Line 1 Interrupt.
-  */
-void EXTI15_10_IRQHandler(void)
-{
+ * @brief This function handles EXTI Line 1 Interrupt.
+ */
+void EXTI15_10_IRQHandler(void) {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
 
   /* USER CODE END EXTI15_10_IRQn 0 */
@@ -230,10 +216,9 @@ void EXTI15_10_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles DMA1 Channel 5 Interrupt.
-  */
-void DMA1_Channel5_IRQHandler(void)
-{
+ * @brief This function handles DMA1 Channel 5 Interrupt.
+ */
+void DMA1_Channel5_IRQHandler(void) {
   /* USER CODE BEGIN DMA1_Channel5_IRQn 0 */
 
   /* USER CODE END DMA1_Channel5_IRQn 0 */
@@ -244,10 +229,9 @@ void DMA1_Channel5_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles USART2 Interrupt.
-  */
-void USART1_IRQHandler(void)
-{
+ * @brief This function handles USART2 Interrupt.
+ */
+void USART1_IRQHandler(void) {
   /* USER CODE BEGIN USART1_IRQn 0 */
 
   /* USER CODE END USART1_IRQn 0 */
@@ -258,10 +242,9 @@ void USART1_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles RTC Alarms (A and B) Interrupt.
-  */
-void RTC_Alarm_IRQHandler(void)
-{
+ * @brief This function handles RTC Alarms (A and B) Interrupt.
+ */
+void RTC_Alarm_IRQHandler(void) {
   /* USER CODE BEGIN RTC_Alarm_IRQn 0 */
 
   /* USER CODE END RTC_Alarm_IRQn 0 */
@@ -272,10 +255,9 @@ void RTC_Alarm_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles SUBGHZ Radio Interrupt.
-  */
-void SUBGHZ_Radio_IRQHandler(void)
-{
+ * @brief This function handles SUBGHZ Radio Interrupt.
+ */
+void SUBGHZ_Radio_IRQHandler(void) {
   /* USER CODE BEGIN SUBGHZ_Radio_IRQn 0 */
 
   /* USER CODE END SUBGHZ_Radio_IRQn 0 */
@@ -287,11 +269,8 @@ void SUBGHZ_Radio_IRQHandler(void)
 
 /* USER CODE BEGIN 1 */
 /**
-  * @brief This function handles TIM2 global interrupt.
-  */
-void TIM2_IRQHandler(void)
-{
-    HAL_TIM_IRQHandler(&htim2); 
-}
+ * @brief This function handles TIM2 global interrupt.
+ */
+void TIM2_IRQHandler(void) { HAL_TIM_IRQHandler(&htim2); }
 /* USER CODE END 1 */
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

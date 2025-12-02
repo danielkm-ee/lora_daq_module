@@ -120,8 +120,6 @@ $(BUILD)/%.o: Utilities/lpm/tiny_lpm/%.c
 	@mkdir -p $(BUILD)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-
-
 clean:
 	rm -rf $(BUILD)
 
@@ -131,3 +129,6 @@ printsrc:
 
 flash:
 	openocd -f interface/stlink.cfg -f target/stm32wlx.cfg -c "init; halt" -c "program build/firmware.elf verify reset"
+
+format:
+	clang-format -i $(shell find src config -type f \( -name '*.c' -o -name '*.h' \))
