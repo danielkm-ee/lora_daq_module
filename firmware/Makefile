@@ -10,6 +10,7 @@ SRC_DIRS = src \
 		   src/power \
 		   src/scheduling \
 		   src/uart \
+		   src/sensors \
            lib/STM32WLxx_HAL_Driver/Src \
            lib/SubGHz_Phy \
            lib/SubGHz_Phy/stm32_radio_driver \
@@ -27,6 +28,7 @@ INC_DIRS = config \
 		   src/power \
 		   src/scheduling \
 		   src/uart \
+		   src/sensors \
            lib/STM32WLxx_HAL_Driver/Inc \
            lib/STM32WLxx/Include \
            lib/CMSIS/Include \
@@ -81,6 +83,10 @@ $(BUILD)/%.o: src/scheduling/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(BUILD)/%.o: src/uart/%.c
+	@mkdir -p $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/%.o: src/sensors/%.c
 	@mkdir -p $(BUILD)
 	$(CC) $(CFLAGS) -c $< -o $@
 

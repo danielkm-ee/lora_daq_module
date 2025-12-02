@@ -1,7 +1,9 @@
 #include "main.h"
+#include "am2320.h"     // AM2320 sensor
+#include "i2c_driver.h" // I2C driver
 #include "lora_app.h"
 #include "stm32wlxx_hal.h"
-// #include "i2c_driver.h"      // Init I2C once
+#include <stdio.h>
 // #include "ads1110.h"         // Analog sensor
 // #include "sensor_digital.h"  // Digital sensor
 // #include "data_buffer.h"
@@ -24,9 +26,22 @@ int main(void) {
   UART_Debug_Println("=== LoRa DAQ Module Starting ===");
 
   /* TODO: Initialize I2C bus */
-  // I2C_Init();
-
+  if (I2C_Init() != I2C_OK) {
+    UART_Debug_Println("ERROR: I2C initialization failed!");
+    LED_Blink(5, 200);
+    while (1)
+      ; // Stop here if I2C fails
+  }
+  UART_Debug_Println("I2C initialized");
   /* TODO: Initialize sensors */
+  if (AM2320_Init() != I2C_OK) {
+    UART_Debug_Println("WARNING: AM2320 not detected on I2C bus");
+    UART_Debug_Println("Check connections: SDA=PA15, SCL=PB15");
+    LED_Blink(3, 200);
+    // Continue anyway for testing
+  } else {
+    UART_Debug_Println("AM2320 sensor detected!");
+  }
   // ADS1110_Init();
   // Digital_Sensor_Init();
 
@@ -38,22 +53,46 @@ int main(void) {
   Scheduler_Init();
   UART_Debug_Println("Scheduler initialized");
 
-  Scheduler_SetSampleInterval(1);
-  Scheduler_SetTxInterval(1);
+  Scheduler_SetSampleInterval(2);
+  Scheduler_SetTxInterval(10);
 
   LED_Blink(10, 100);
-  UART_Debug_Println("Sample interval: 1 sec, TX interval: 1 sec");
+  UART_Debug_Println("Sample interval: 2 sec, TX interval: 10 sec");
   UART_Debug_Println("System ready!");
   // UART_SendString("System started\r\n");
 
   // test lora data
-  uint8_t test_msg[] = "hello lora";
+  // uint8_t test_msg[] = "hello lora";
 
+  // Variable for sensor data
+  float temperature = 0.0f;
+  float humidity = 0.0f;
+  uint8_t lora_buffer[64];
+  uint16_t lora_len = 0;
   while (1) {
     if (Scheduler_ShouldSample()) {
       LED_On();
-      UART_Debug_Println("Sampling...");
+      UART_Debug_Println("Sampling AM2320...");
       /*TODO: Read sensors */
+      int8_t result = AM2320_Read(&temperature, &humidity);
+      if (result == I2C_OK) {
+        // Create debug message
+        char debug_msg[64];
+        snprintf(debug_msg, sizeof(debug_msg),
+                 "Temp: %.1f C, Humidity: %.1f %%", temperature, humidity);
+        UART_Debug_Println(debug_msg);
+
+        // Prepare data for LoRa transmission
+        lora_len = snprintf((char *)lora_buffer, sizeof(lora_buffer),
+                            "T:%.1f,H:%.1f", temperature, humidity);
+      } else if (result == I2C_TIMEOUT) {
+        UART_Debug_Println("ERROR: AM2320 timeout (sensor not responding)");
+      } else {
+        UART_Debug_Println("ERROR: AM2320 I2C error");
+      }
+
+      /* TODO: Read other sensors */
+      // ADS1110_Read();
       LED_Off();
     }
 
@@ -62,7 +101,16 @@ int main(void) {
       UART_Debug_Println("Transmitting...");
       // Send LoRa
       /* TODO: send actual data */
-      LoRa_App_SendData(test_msg, sizeof(test_msg)); // Placeholder
+      // Send actual sensor data if available
+      if (lora_len > 0) {
+        LoRa_App_SendData(lora_buffer, lora_len);
+        UART_Debug_Println("Sensor data transmitted.");
+      } else {
+        // Send test message if no sensor data
+        uint8_t test_msg[] = "No sensor data";
+        LoRa_App_SendData(test_msg, sizeof(test_msg));
+        UART_Debug_Println("Test message transmitted.");
+      }
       UART_Debug_Println("Transmission complete.");
     }
 
