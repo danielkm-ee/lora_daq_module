@@ -3,6 +3,7 @@
 #include "radio_board_if.h"
 #include "stm32wlxx_hal.h"
 #include "uart_debug.h"
+#include <stdio.h>
 
 // Radio event callbacks (forward declarations)
 static void OnTxDone(void);
@@ -25,7 +26,7 @@ void LoRa_App_Init(void) {
   // Initialize Radio driver with callbacks
   Radio.Init(&RadioEvents);
 
-  UART_Debug_Println("Setting radio channel...");
+  UART_Debug_Println("Setting radio channel (TX mode)...");
   Radio.SetChannel(915000000); // 915 MHz for USA
 
   UART_Debug_Println("Configuring LoRa parameters...");
@@ -48,6 +49,40 @@ void LoRa_App_Init(void) {
   UART_Debug_Println("LoRa configuration complete!");
 }
 
+void LoRa_App_Init_RX(void) {
+
+  // Initialize Radio driver with callbacks
+  Radio.Init(&RadioEvents);
+
+  UART_Debug_Println("Setting radio channel (RX mode)...");
+  Radio.SetChannel(915000000); // MATCH TX: 915 MHz
+
+  UART_Debug_Println("Configuring LoRa RX parameters...");
+
+  // Configure LoRa for RX; parameters match transmitter
+  Radio.SetRxConfig(MODEM_LORA, // LoRa mode
+                    0,          // Bandwidth: 0 = 125kHz
+                    7,          // Datarate: SF7
+                    1,          // Coderate: 4/5
+                    0,          // bandwidthAfc: 0 (not used for LoRa)
+                    8,          // Preamble length
+                    5,          // symbTimeout: 5 symbols (RX-specific)
+                    false,      // Variable length
+                    0,          // payloadLen: 0 (not used with variable length)
+                    true,       // CRC on
+                    false,      // No frequency hopping
+                    0,          // Hop period
+                    false,      // IQ normal
+                    true        // rxContinuous: true
+  );
+
+  UART_Debug_Println("Starting continuous receive mode...");
+
+  Radio.Rx(0); // Start receiving (0 = continuous mode)
+
+  UART_Debug_Println("Receiver ready!");
+}
+
 void LoRa_App_SendData(uint8_t *data, uint8_t size) { Radio.Send(data, size); }
 
 // Radio event callback implementations
@@ -57,7 +92,54 @@ static void OnTxDone(void) {
 
 static void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi,
                      int8_t snr) {
-  // TODO: Handle received data
+
+  // Print packet info
+  UART_Debug_Print("\r\n[Receiving Packet!] Size: ");
+  char buf[32];
+
+  // Print size
+  snprintf(buf, sizeof(buf), "%u", size);
+  UART_Debug_Print(buf);
+  UART_Debug_Print(" bytes, RSSI: ");
+
+  // Print RSSI
+  snprintf(buf, sizeof(buf), "%d", rssi);
+  UART_Debug_Print(buf);
+  UART_Debug_Print(" dBm, SNR: ");
+
+  // Print SNR
+  snprintf(buf, sizeof(buf), "%d", snr);
+  UART_Debug_Print(buf);
+  UART_Debug_Println(" dB");
+
+  // Print payload as hex
+  UART_Debug_Print("Data (hex): ");
+  for (uint16_t i = 0; i < size && i < 32; i++) {
+    uint8_t byte = payload[i];
+    char hex[4];
+    hex[0] = "0123456789ABCDEF"[byte >> 4];
+    hex[1] = "0123456789ABCDEF"[byte & 0x0F];
+    hex[2] = ' ';
+    hex[3] = '\0';
+    UART_Debug_Print(hex);
+  }
+  UART_Debug_Println("");
+
+  // Print payload as ASCII
+  UART_Debug_Print("Data (ASCII): ");
+  for (uint16_t i = 0; i < size; i++) {
+    char c = payload[i];
+    if (c >= 32 && c <= 126) {
+      char str[2] = {c, '\0'};
+      UART_Debug_Print(str);
+    } else {
+      UART_Debug_Print(".");
+    }
+  }
+  UART_Debug_Println("\r\n");
+
+  // CRITICAL: Restart receiving for next packet
+  Radio.Rx(0);
 }
 
 static void OnTxTimeout(void) {

@@ -46,7 +46,6 @@ void LED_Init(void);
 void LED_Blink(uint8_t times, uint32_t delay_ms);
 void LED_On(void);
 void LED_Off(void);
-void float_to_string(float value, char *buffer, uint8_t decimal_places);
 
 #ifdef __cplusplus
 }

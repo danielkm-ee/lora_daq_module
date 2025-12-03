@@ -37,6 +37,15 @@ make
 make flash
 ```
 
+#### External make
+```
+make tx         # Build firmware with TX configuration
+make rx         # Build firmware with RX configuration
+make flash_tx   # Flash TX firmware to the board
+make flash_rx   # Flash RX firmware to the board
+```
+
+
 ### 5. Every time before push
 #### Run a clean build
 ```
@@ -112,11 +121,13 @@ Some of these files directly under `/src` are clearly unnecessary and should eve
 
 I also tried to understand the original Seeed code to get more understanding for lora, but it includes extensive LoRaWAN network-server configuration. This adds a large amount of logic beyond the PHY layer, which makes it harder to follow for our case for point-to-point LoRa use case. So I directly referred to `radio.h` under `firmware\lib\SubGHz_Phy` to locate the functions used for radio initialization and configuration. 
 
+Update: I have test with external dev board flashing RX firmware `make rx` and verify through a point-to-point test that our LoRa module is correctly configured and can transmit the correct packet signal that can be decoded.
+
 All of the LoRa application code is organized under `src/lora`.
 
 #### TODO:
 - [x] Test the signal physically transmitted
-- [] Test the signal can be decode from other LoRa board
+- [x] Test the signal can be decode from other LoRa board
 
 
 ### Scheduling Interrupt

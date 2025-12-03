@@ -4,6 +4,7 @@
 #include <stdint.h>
 
 void LoRa_App_Init(void);
+void LoRa_App_Init_RX(void);
 void LoRa_App_SendData(uint8_t *data, uint8_t size);
 
 #endif

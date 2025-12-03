@@ -60,7 +60,9 @@ extern RTC_HandleTypeDef hrtc;
 extern SUBGHZ_HandleTypeDef hsubghz;
 extern DMA_HandleTypeDef hdma_usart1_tx;
 extern UART_HandleTypeDef huart1;
+#ifdef BUILD_TX
 extern TIM_HandleTypeDef htim2;
+#endif
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -271,6 +273,8 @@ void SUBGHZ_Radio_IRQHandler(void) {
 /**
  * @brief This function handles TIM2 global interrupt.
  */
+#ifdef BUILD_TX
 void TIM2_IRQHandler(void) { HAL_TIM_IRQHandler(&htim2); }
+#endif
 /* USER CODE END 1 */
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

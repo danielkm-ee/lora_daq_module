@@ -1,7 +1,7 @@
-#include "main.h"
 #include "am2320.h"     // AM2320 sensor
 #include "i2c_driver.h" // I2C driver
 #include "lora_app.h"
+#include "main.h"
 #include "stm32wlxx_hal.h"
 #include <stdio.h>
 // #include "ads1110.h"         // Analog sensor

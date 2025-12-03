@@ -1,56 +1,120 @@
+# Usage:
+#   make           # Build transmitter (default)
+#   make tx        # Build transmitter
+#   make rx        # Build receiver
+#   make flash     # Flash transmitter (default)
+#   make flash_tx  # Flash transmitter
+#   make flash_rx  # Flash receiver
+
+MODE ?= TX
+
+ifeq ($(MODE),TX)
+    CFLAGS += -DBUILD_TX
+    TARGET = firmware_tx
+else ifeq ($(MODE),RX)
+    CFLAGS += -DBUILD_RX
+    TARGET = firmware_rx
+endif
+
 #########################################
 # Project setup
 #########################################
-TARGET = firmware
 BUILD  = build
-SRC_DIRS = src \
-		   src/app \
-		   src/i2c \
-		   src/lora \
-		   src/power \
-		   src/scheduling \
-		   src/uart \
-		   src/sensors \
-           lib/STM32WLxx_HAL_Driver/Src \
-           lib/SubGHz_Phy \
-           lib/SubGHz_Phy/stm32_radio_driver \
-           lib/BSP/STM32WLxx_LoRa_E5_mini \
-           Utilities/timer \
-           Utilities/misc \
-           Utilities/trace/adv_trace \
-           Utilities/lpm/tiny_lpm
+# Conditional source directories based on mode
+ifeq ($(MODE),TX)
+    SRC_DIRS = src \
+               src/app \
+               src/i2c \
+               src/lora \
+               src/power \
+               src/scheduling \
+               src/uart \
+               src/sensors \
+               lib/STM32WLxx_HAL_Driver/Src \
+               lib/SubGHz_Phy \
+               lib/SubGHz_Phy/stm32_radio_driver \
+               lib/BSP/STM32WLxx_LoRa_E5_mini \
+               Utilities/timer \
+               Utilities/misc \
+               Utilities/trace/adv_trace \
+               Utilities/lpm/tiny_lpm
+    
+    INC_DIRS = config \
+               src \
+               src/app \
+               src/i2c \
+               src/lora \
+               src/power \
+               src/scheduling \
+               src/uart \
+               src/sensors \
+               lib/STM32WLxx_HAL_Driver/Inc \
+               lib/STM32WLxx/Include \
+               lib/CMSIS/Include \
+               lib/SubGHz_Phy \
+               lib/SubGHz_Phy/stm32_radio_driver \
+               lib/BSP/STM32WLxx_LoRa_E5_mini \
+               Utilities/timer \
+               Utilities/misc \
+               Utilities/trace/adv_trace \
+               Utilities/lpm/tiny_lpm
+else ifeq ($(MODE),RX)
+    # RX doesn't need I2C, sensors, scheduling
+    SRC_DIRS = src \
+               src/app \
+               src/lora \
+               src/uart \
+               lib/STM32WLxx_HAL_Driver/Src \
+               lib/SubGHz_Phy \
+               lib/SubGHz_Phy/stm32_radio_driver \
+               lib/BSP/STM32WLxx_LoRa_E5_mini \
+               Utilities/timer \
+               Utilities/misc \
+               Utilities/trace/adv_trace \
+               Utilities/lpm/tiny_lpm
+    
+    INC_DIRS = config \
+               src \
+               src/app \
+               src/lora \
+               src/uart \
+               lib/STM32WLxx_HAL_Driver/Inc \
+               lib/STM32WLxx/Include \
+               lib/CMSIS/Include \
+               lib/SubGHz_Phy \
+               lib/SubGHz_Phy/stm32_radio_driver \
+               lib/BSP/STM32WLxx_LoRa_E5_mini \
+               Utilities/timer \
+               Utilities/misc \
+               Utilities/trace/adv_trace \
+               Utilities/lpm/tiny_lpm
+endif
 
-INC_DIRS = config \
-           src \
-		   src/app \
-		   src/i2c \
-		   src/lora \
-		   src/power \
-		   src/scheduling \
-		   src/uart \
-		   src/sensors \
-           lib/STM32WLxx_HAL_Driver/Inc \
-           lib/STM32WLxx/Include \
-           lib/CMSIS/Include \
-           lib/SubGHz_Phy \
-           lib/SubGHz_Phy/stm32_radio_driver \
-           lib/BSP/STM32WLxx_LoRa_E5_mini \
-           Utilities/timer \
-           Utilities/misc \
-           Utilities/trace/adv_trace \
-           Utilities/lpm/tiny_lpm
 STARTUP = startup_stm32wle5xx.s
+
 
 CC = arm-none-eabi-gcc
 OBJCOPY = arm-none-eabi-objcopy
 CFLAGS = -mcpu=cortex-m4 -mthumb -O2 -Wall -g -DSTM32WLE5xx -DUSE_HAL_DRIVER
 CFLAGS += $(addprefix -I, $(INC_DIRS))
 LDFLAGS = -T stm32wl.ld -Wl,--gc-sections
-SRC = $(filter-out \
-	lib/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_timebase_rtc_alarm_template.c \
-	lib/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_timebase_rtc_wakeup_template.c \
-	lib/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_timebase_tim_template.c, \
-	$(foreach d, $(SRC_DIRS), $(wildcard $(d)/*.c)))
+ifeq ($(MODE),TX)
+    # Exclude main_rx.c when building TX
+    SRC = $(filter-out \
+        lib/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_timebase_rtc_alarm_template.c \
+        lib/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_timebase_rtc_wakeup_template.c \
+        lib/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_timebase_tim_template.c \
+        src/app/main_rx.c, \
+        $(foreach d, $(SRC_DIRS), $(wildcard $(d)/*.c)))
+else ifeq ($(MODE),RX)
+    # Exclude main_tx.c when building RX
+    SRC = $(filter-out \
+        lib/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_timebase_rtc_alarm_template.c \
+        lib/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_timebase_rtc_wakeup_template.c \
+        lib/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_timebase_tim_template.c \
+        src/app/main_tx.c, \
+        $(foreach d, $(SRC_DIRS), $(wildcard $(d)/*.c)))
+endif
 OBJ = $(addprefix $(BUILD)/, $(notdir $(SRC:.c=.o)))
 
 all: $(BUILD)/$(TARGET).elf
@@ -59,7 +123,8 @@ $(BUILD)/$(TARGET).elf: $(OBJ) $(STARTUP)
 	@mkdir -p $(BUILD)
 	$(CC) $(CFLAGS) $(OBJ) $(STARTUP) $(LDFLAGS) -o $@
 	$(OBJCOPY) -O binary $@ $(BUILD)/$(TARGET).bin
-
+	@echo "Build complete: $(TARGET)"
+	@echo "Binary: $(BUILD)/$(TARGET).bin"
 # Build .c files from any source directory
 
 $(BUILD)/%.o: src/app/%.c
@@ -126,15 +191,40 @@ $(BUILD)/%.o: Utilities/lpm/tiny_lpm/%.c
 	@mkdir -p $(BUILD)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+tx:
+	@$(MAKE) all MODE=TX
+
+rx:
+	@$(MAKE) all MODE=RX
+
+flash: tx
+	@echo "Flashing $(TARGET)..."
+	openocd -f interface/stlink.cfg -f target/stm32wlx.cfg \
+		-c "init; halt" \
+		-c "program build/$(TARGET).elf verify reset exit"
+
+flash_tx: tx
+	@echo "Flashing transmitter..."
+	openocd -f interface/stlink.cfg -f target/stm32wlx.cfg \
+		-c "init; halt" \
+		-c "program build/firmware_tx.elf verify reset exit"
+
+flash_rx: rx
+	@echo "Flashing receiver..."
+	openocd -f interface/stlink.cfg -f target/stm32wlx.cfg \
+		-c "init; halt" \
+		-c "program build/firmware_rx.elf verify reset exit"
+
 clean:
 	rm -rf $(BUILD)
 
 printsrc:
+	@echo "MODE = $(MODE)"
+	@echo "TARGET = $(TARGET)"
 	@echo "SRC_DIRS = $(SRC_DIRS)"
 	@echo "SRC = $(SRC)"
 
-flash:
-	openocd -f interface/stlink.cfg -f target/stm32wlx.cfg -c "init; halt" -c "program build/firmware.elf verify reset"
-
 format:
 	clang-format -i $(shell find src config -type f \( -name '*.c' -o -name '*.h' \))
+
+.PHONY: all tx rx flash flash_tx flash_rx clean printsrc format
