@@ -10,9 +10,6 @@
 #define I2C_TIMEOUT -2
 #define I2C_BUSY -3
 
-// I2C timeout in milliseconds
-#define I2C_TIMEOUT_MS 100
-
 // Shared I2C driver
 
 int8_t I2C_Init(void);

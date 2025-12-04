@@ -1,5 +1,6 @@
 // #include <stdint.h>
 #include "i2c_driver.h"
+#include "board_config.h"
 // #include "stm32wlxx_hal.h"
 
 // I2C handle for I2C2 peripheral
@@ -14,21 +15,21 @@ int8_t I2C_Init(void) {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   // Configure PA15 as I2C2_SDA
-  GPIO_InitStruct.Pin = GPIO_PIN_15;
+  GPIO_InitStruct.Pin = I2C_SDA_GPIO_PIN;
 
   GPIO_InitStruct.Mode = GPIO_MODE_AF_OD; // AF: Alternate Function Open-Drain
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF4_I2C2; // SDA function
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  GPIO_InitStruct.Alternate = I2C_SDA_GPIO_AF; // SDA function
+  HAL_GPIO_Init(I2C_SDA_GPIO_PORT, &GPIO_InitStruct);
 
   // Configure PB10 as I2C2_SCL
-  GPIO_InitStruct.Pin = GPIO_PIN_15;
-  GPIO_InitStruct.Alternate = GPIO_AF4_I2C2; // SCL function
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  GPIO_InitStruct.Pin = I2C_SCL_GPIO_PIN;
+  GPIO_InitStruct.Alternate = I2C_SCL_GPIO_AF; // SCL function
+  HAL_GPIO_Init(I2C_SCL_GPIO_PORT, &GPIO_InitStruct);
 
   hi2c2.Instance = I2C2;
-  hi2c2.Init.Timing = 0x00702991; // 100kHz @ 48MHz
+  hi2c2.Init.Timing = I2C_TIMING; // 100kHz @ 48MHz
   hi2c2.Init.OwnAddress1 = 0;
   hi2c2.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
   hi2c2.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;

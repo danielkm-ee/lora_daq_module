@@ -1,4 +1,5 @@
 #include "lora_app.h"
+#include "board_config.h"
 #include "radio.h"
 #include "radio_board_if.h"
 #include "stm32wlxx_hal.h"
@@ -27,24 +28,24 @@ void LoRa_App_Init(void) {
   Radio.Init(&RadioEvents);
 
   UART_Debug_Println("Setting radio channel (TX mode)...");
-  Radio.SetChannel(915000000); // 915 MHz for USA
+  Radio.SetChannel(LORA_FREQUENCY); // 915 MHz for USA
 
   UART_Debug_Println("Configuring LoRa parameters...");
 
   // Configure LoRa parameters
-  Radio.SetTxConfig(MODEM_LORA, // LoRa mode
-                    14,         // 14 dBm power
-                    0,          // FSK deviation (N/A for LoRa)
-                    0,          // Bandwidth: 0 = 125kHz
-                    7,          // Datarate: SF7
-                    1,          // Coderate: 4/5
-                    8,          // Preamble length
-                    false,      // Variable length
-                    true,       // CRC on
-                    false,      // No frequency hopping
-                    0,          // Hop period (N/A)
-                    false,      // IQ normal
-                    3000);      // TX timeout 3s
+  Radio.SetTxConfig(MODEM_LORA,            // LoRa mode
+                    LORA_TX_POWER_DBM,     // TX power in dBm
+                    0,                     // FSK deviation (N/A for LoRa)
+                    LORA_BANDWIDTH,        // Bandwidth: 0 = 125kHz
+                    LORA_SPREADING_FACTOR, // Datarate: SF7
+                    LORA_CODING_RATE,      // Coderate: 4/5
+                    LORA_PREAMBLE_LENGTH,  // Preamble length
+                    false,                 // Variable length
+                    true,                  // CRC on
+                    false,                 // No frequency hopping
+                    0,                     // Hop period (N/A)
+                    false,                 // IQ normal
+                    3000);                 // TX timeout 3s
 
   UART_Debug_Println("LoRa configuration complete!");
 }
@@ -55,25 +56,23 @@ void LoRa_App_Init_RX(void) {
   Radio.Init(&RadioEvents);
 
   UART_Debug_Println("Setting radio channel (RX mode)...");
-  Radio.SetChannel(915000000); // MATCH TX: 915 MHz
-
+  Radio.SetChannel(LORA_FREQUENCY); // MATCH TX: 915 MHz
   UART_Debug_Println("Configuring LoRa RX parameters...");
-
   // Configure LoRa for RX; parameters match transmitter
-  Radio.SetRxConfig(MODEM_LORA, // LoRa mode
-                    0,          // Bandwidth: 0 = 125kHz
-                    7,          // Datarate: SF7
-                    1,          // Coderate: 4/5
-                    0,          // bandwidthAfc: 0 (not used for LoRa)
-                    8,          // Preamble length
-                    5,          // symbTimeout: 5 symbols (RX-specific)
-                    false,      // Variable length
-                    0,          // payloadLen: 0 (not used with variable length)
-                    true,       // CRC on
-                    false,      // No frequency hopping
-                    0,          // Hop period
-                    false,      // IQ normal
-                    true        // rxContinuous: true
+  Radio.SetRxConfig(MODEM_LORA,            // LoRa mode
+                    LORA_BANDWIDTH,        // Bandwidth: 0 = 125kHz
+                    LORA_SPREADING_FACTOR, // Datarate: SF7
+                    LORA_CODING_RATE,      // Coderate: 4/5
+                    0,                    // bandwidthAfc: 0 (not used for LoRa)
+                    LORA_PREAMBLE_LENGTH, // Preamble length
+                    5,     // symbTimeout: 5 symbols (RX-specific)
+                    false, // Variable length
+                    0,     // payloadLen: 0 (not used with variable length)
+                    true,  // CRC on
+                    false, // No frequency hopping
+                    0,     // Hop period
+                    false, // IQ normal
+                    true   // rxContinuous: true
   );
 
   UART_Debug_Println("Starting continuous receive mode...");

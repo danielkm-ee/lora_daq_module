@@ -7,6 +7,9 @@
 // #include "ads1110.h"         // Analog sensor
 // #include "sensor_digital.h"  // Digital sensor
 // #include "data_buffer.h"
+#include "ads1110.h" // ADS1110 ADC
+#include "board_config.h"
+#include "gpio_driver.h"
 #include "scheduler.h"
 #include "uart_debug.h" // UART debug functions
 
@@ -16,10 +19,17 @@ void LED_Blink(uint8_t times, uint32_t delay_ms);
 void LED_On(void);
 void LED_Off(void);
 
+// static GPIO_Handle_t led = {
+//     .port = LED_GPIO_PORT,
+//     .pin = LED_GPIO_PIN,
+//     .mode = GPIO_MODE_OUTPUT,
+//     .pull = GPIO_PULL_NONE,
+//     .speed = GPIO_SPEED_LOW
+// };
+
 int main(void) {
   HAL_Init();
   SystemClock_Config();
-  LED_Init();
 
   // Initialize UART for debugging
   UART_Debug_Init();
@@ -28,21 +38,25 @@ int main(void) {
   /* TODO: Initialize I2C bus */
   if (I2C_Init() != I2C_OK) {
     UART_Debug_Println("ERROR: I2C initialization failed!");
-    LED_Blink(5, 200);
     while (1)
       ; // Stop here if I2C fails
   }
   UART_Debug_Println("I2C initialized");
-  /* TODO: Initialize sensors */
   if (AM2320_Init() != I2C_OK) {
     UART_Debug_Println("WARNING: AM2320 not detected on I2C bus");
     UART_Debug_Println("Check connections: SDA=PA15, SCL=PB15");
-    LED_Blink(3, 200);
     // Continue anyway for testing
   } else {
     UART_Debug_Println("AM2320 sensor detected!");
   }
   // ADS1110_Init();
+  // ADS1110 configuration
+  // ADS1110_Config_t adc_config = {
+  //     .gain = ADS1110_GAIN_8,           // gain 8
+  //     .data_rate = ADS1110_DR_60SPS,    // 60 samples/sec
+  //     .mode = ADS1110_MODE_CONTINUOUS   // continuous mode
+  // };
+
   // Digital_Sensor_Init();
 
   /* TODO: Initialize storage modules */
@@ -56,7 +70,6 @@ int main(void) {
   Scheduler_SetSampleInterval(2);
   Scheduler_SetTxInterval(10);
 
-  LED_Blink(10, 100);
   UART_Debug_Println("Sample interval: 2 sec, TX interval: 10 sec");
   UART_Debug_Println("System ready!");
   // UART_SendString("System started\r\n");
@@ -67,11 +80,11 @@ int main(void) {
   // Variable for sensor data
   float temperature = 0.0f;
   float humidity = 0.0f;
+  // float adc_voltage = 0.0f;
   uint8_t lora_buffer[64];
   uint16_t lora_len = 0;
   while (1) {
     if (Scheduler_ShouldSample()) {
-      LED_On();
       UART_Debug_Println("Sampling AM2320...");
       /*TODO: Read sensors */
       int8_t result = AM2320_Read(&temperature, &humidity);
@@ -90,14 +103,27 @@ int main(void) {
       } else {
         UART_Debug_Println("ERROR: AM2320 I2C error");
       }
-
-      /* TODO: Read other sensors */
-      // ADS1110_Read();
-      LED_Off();
     }
 
+    /* TODO: Read other sensors */
+
+    //   int8_t result_adc = ADS1110_ReadVoltage(&adc_voltage);
+    //   if (result_adc == I2C_OK) {
+    //       char msg[64];
+    //       snprintf(msg, sizeof(msg), "ADS1110: Voltage=%.4fV", adc_voltage);
+    //       UART_Debug_Println(msg);
+    //       ADS1110_ReadRaw(&adc_raw);
+    //   } else {
+    //       UART_Debug_Println("ADS1110: Read failed");
+    //   }
+
+    //   // Prepare data for LoRa transmission
+    //   lora_len = snprintf((char *)lora_buffer, sizeof(lora_buffer),
+    //                       "T:%.1f,H:%.1f,V:%.3f",
+    //                       temperature, humidity, adc_voltage);
+    // }
+
     if (Scheduler_ShouldTransmit()) {
-      LED_Blink(3, 50);
       UART_Debug_Println("Transmitting...");
       // Send LoRa
       /* TODO: send actual data */
@@ -117,6 +143,7 @@ int main(void) {
     __WFI(); // Wait for interrupt
   }
 }
+
 void SystemClock_Config(void) {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};

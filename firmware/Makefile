@@ -5,15 +5,29 @@
 #   make flash     # Flash transmitter (default)
 #   make flash_tx  # Flash transmitter
 #   make flash_rx  # Flash receiver
+#   make tx BOARD=CUSTOM    # Build TX for custom PCB
+#   make rx BOARD=CUSTOM    # Build RX for custom PCB
+
 
 MODE ?= TX
+BOARD ?= WIO_E5
 
+# Board Selection
+ifeq ($(BOARD),WIO_E5)
+    CFLAGS += -DBOARD_WIO_E5
+else ifeq ($(BOARD),CUSTOM)
+    CFLAGS += -DBOARD_CUSTOM
+else
+    $(error Unknown BOARD specified: $(BOARD). Valid options are WIO_E5 or CUSTOM)
+endif
+
+# Mode Selection
 ifeq ($(MODE),TX)
     CFLAGS += -DBUILD_TX
-    TARGET = firmware_tx
+    TARGET = firmware_tx_$(BOARD)
 else ifeq ($(MODE),RX)
     CFLAGS += -DBUILD_RX
-    TARGET = firmware_rx
+    TARGET = firmware_rx_$(BOARD)
 endif
 
 #########################################
@@ -30,6 +44,7 @@ ifeq ($(MODE),TX)
                src/scheduling \
                src/uart \
                src/sensors \
+               src/gpio \
                lib/STM32WLxx_HAL_Driver/Src \
                lib/SubGHz_Phy \
                lib/SubGHz_Phy/stm32_radio_driver \
@@ -48,6 +63,7 @@ ifeq ($(MODE),TX)
                src/scheduling \
                src/uart \
                src/sensors \
+               src/gpio \
                lib/STM32WLxx_HAL_Driver/Inc \
                lib/STM32WLxx/Include \
                lib/CMSIS/Include \
@@ -155,6 +171,10 @@ $(BUILD)/%.o: src/sensors/%.c
 	@mkdir -p $(BUILD)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+$(BUILD)/%.o: src/gpio/%.c
+	@mkdir -p $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
 $(BUILD)/%.o: src/%.c
 	@mkdir -p $(BUILD)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -192,10 +212,10 @@ $(BUILD)/%.o: Utilities/lpm/tiny_lpm/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 tx:
-	@$(MAKE) all MODE=TX
+	@$(MAKE) all MODE=TX BOARD=$(BOARD)
 
 rx:
-	@$(MAKE) all MODE=RX
+	@$(MAKE) all MODE=RX BOARD=$(BOARD)
 
 flash: tx
 	@echo "Flashing $(TARGET)..."
@@ -204,25 +224,26 @@ flash: tx
 		-c "program build/$(TARGET).elf verify reset exit"
 
 flash_tx: tx
-	@echo "Flashing transmitter..."
+	@echo "Flashing transmitter for $(BOARD)..."
 	openocd -f interface/stlink.cfg -f target/stm32wlx.cfg \
 		-c "init; halt" \
-		-c "program build/firmware_tx.elf verify reset exit"
+		-c "program build/firmware_tx_$(BOARD).elf verify reset exit"
 
 flash_rx: rx
-	@echo "Flashing receiver..."
+	@echo "Flashing receiver for $(BOARD)..."
 	openocd -f interface/stlink.cfg -f target/stm32wlx.cfg \
 		-c "init; halt" \
-		-c "program build/firmware_rx.elf verify reset exit"
+		-c "program build/firmware_rx_$(BOARD).elf verify reset exit"
 
 clean:
 	rm -rf $(BUILD)
 
 printsrc:
 	@echo "MODE = $(MODE)"
+	@echo "BOARD = $(BOARD)"
 	@echo "TARGET = $(TARGET)"
+	@echo "CFLAGS = $(CFLAGS)"
 	@echo "SRC_DIRS = $(SRC_DIRS)"
-	@echo "SRC = $(SRC)"
 
 format:
 	clang-format -i $(shell find src config -type f \( -name '*.c' -o -name '*.h' \))
