@@ -63,7 +63,10 @@ void DMA1_Channel5_IRQHandler(void);
 void USART2_IRQHandler(void);
 void RTC_Alarm_IRQHandler(void);
 void SUBGHZ_Radio_IRQHandler(void);
+
+#ifndef BUILD_RX
 void TIM2_IRQHandler(void); // Timer 2 interrupt handler
+#endif
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */

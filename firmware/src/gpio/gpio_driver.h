@@ -13,10 +13,6 @@ typedef struct {
   uint32_t speed;
 } GPIO_Handle_t;
 
-// GPIO modes
-#define GPIO_MODE_INPUT GPIO_MODE_INPUT
-#define GPIO_MODE_OUTPUT GPIO_MODE_OUTPUT_PP
-#define GPIO_MODE_OUTPUT_OD GPIO_MODE_OUTPUT_OD
 
 // Pull-up/down options
 #define GPIO_PULL_NONE GPIO_NOPULL

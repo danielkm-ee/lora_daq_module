@@ -12,6 +12,11 @@
 MODE ?= TX
 BOARD ?= WIO_E5
 
+# CFlags need to declare eariler
+CC = arm-none-eabi-gcc
+OBJCOPY = arm-none-eabi-objcopy
+CFLAGS = -mcpu=cortex-m4 -mthumb -O2 -Wall -g -DSTM32WLE5xx -DUSE_HAL_DRIVER
+
 # Board Selection
 ifeq ($(BOARD),WIO_E5)
     CFLAGS += -DBOARD_WIO_E5
@@ -108,10 +113,6 @@ endif
 
 STARTUP = startup_stm32wle5xx.s
 
-
-CC = arm-none-eabi-gcc
-OBJCOPY = arm-none-eabi-objcopy
-CFLAGS = -mcpu=cortex-m4 -mthumb -O2 -Wall -g -DSTM32WLE5xx -DUSE_HAL_DRIVER
 CFLAGS += $(addprefix -I, $(INC_DIRS))
 LDFLAGS = -T stm32wl.ld -Wl,--gc-sections
 ifeq ($(MODE),TX)
