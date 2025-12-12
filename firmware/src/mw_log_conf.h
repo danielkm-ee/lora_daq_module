@@ -52,6 +52,7 @@ extern "C" {
 /* USER CODE END EV */
 
 /* Exported macro ------------------------------------------------------------*/
+// clang-format off
 #ifdef MW_LOG_ENABLED
 #define MW_LOG(TS, VL, ...)                                                    \
   do {                                                                         \
@@ -60,6 +61,7 @@ extern "C" {
 #else /* MW_LOG_ENABLED */
 #define MW_LOG(TS, VL, ...)
 #endif /* MW_LOG_ENABLED */
+// clang-format on
 /* USER CODE BEGIN EM */
 
 /* USER CODE END EM */
