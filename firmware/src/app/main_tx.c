@@ -52,9 +52,9 @@ int main(void) {
 
   // ADS1110 configuration
   ADS1110_Config_t adc_config = {
-      .gain = ADS1110_GAIN_1,           // gain 1
-      .data_rate = ADS1110_DR_60SPS,    // 60 samples/sec
-      .mode = ADS1110_MODE_CONTINUOUS   // continuous mode
+      .gain = ADS1110_GAIN_1,         // gain 1
+      .data_rate = ADS1110_DR_60SPS,  // 60 samples/sec
+      .mode = ADS1110_MODE_CONTINUOUS // continuous mode
   };
   ADS1110_Init(&adc_config);
 
@@ -98,21 +98,21 @@ int main(void) {
         UART_Debug_Println("ERROR: AM2320 I2C error");
       }
 
-    /* TODO: Read other sensors */
+      /* TODO: Read other sensors */
 
       int8_t result_adc = ADS1110_ReadVoltage(&adc_voltage);
       if (result_adc == I2C_OK) {
-          char msg[64];
-          snprintf(msg, sizeof(msg), "ADS1110: Voltage=%.4fV", adc_voltage);
-          UART_Debug_Println(msg);
+        char msg[64];
+        snprintf(msg, sizeof(msg), "ADS1110: Voltage=%.4fV", adc_voltage);
+        UART_Debug_Println(msg);
       } else {
-          UART_Debug_Println("ADS1110: Read failed");
+        UART_Debug_Println("ADS1110: Read failed");
       }
 
       // Prepare data for LoRa transmission
-      lora_len = snprintf((char *)lora_buffer, sizeof(lora_buffer),
-                          "T:%.1f,H:%.1f,V:%.3f",
-                          temperature, humidity, adc_voltage);
+      lora_len =
+          snprintf((char *)lora_buffer, sizeof(lora_buffer),
+                   "T:%.1f,H:%.1f,V:%.3f", temperature, humidity, adc_voltage);
     }
     if (Scheduler_ShouldTransmit()) {
       UART_Debug_Println("Transmitting...");

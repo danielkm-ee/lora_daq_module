@@ -13,7 +13,6 @@ typedef struct {
   uint32_t speed;
 } GPIO_Handle_t;
 
-
 // Pull-up/down options
 #define GPIO_PULL_NONE GPIO_NOPULL
 #define GPIO_PULL_UP GPIO_PULLUP

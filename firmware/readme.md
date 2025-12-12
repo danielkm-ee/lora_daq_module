@@ -105,6 +105,21 @@ src/
 │   └── uart_debug.h
 ├── Other system configure files... (Placement TBD)
 ```
+firmware/
+├── Makefile           # Main Build Script (Tx/Rx targets, Flash rules)
+├── config/            # Hardware Configuration (Pins, Clocks, Interrupts)
+├── src/               # User Application Code
+│   ├── app/           # Main Entry & Logic
+│   ├── lora/          # LoRaWAN Stack & App Layer
+│   ├── sensors/       # Drivers (AM2320, ADS1110)
+│   ├── scheduling/    # Task Scheduler
+│   ├── power/         # Power Management
+│   ├── storage/
+│   └── i2c/ & uart/   # Hardware Interfaces
+├── lib/               # Vendor Libraries (STM32 HAL, CMSIS, Radio Drivers)
+├── Utilities/         # Shared Helpers (Timers, LPM, Trace)
+└── build/             # Compilation Output (.elf, .bin, .hex)
+
 
 #### TODO:
 - [x] cleanup structure for contribution and reviews

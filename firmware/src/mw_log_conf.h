@@ -55,9 +55,7 @@ extern "C" {
 #ifdef MW_LOG_ENABLED
 #define MW_LOG(TS, VL, ...)                                                    \
   do {                                                                         \
-    {                                                                          \
-      UTIL_ADV_TRACE_COND_FSend(VL, T_REG_OFF, TS, __VA_ARGS__);               \
-    }                                                                          \
+    { UTIL_ADV_TRACE_COND_FSend(VL, T_REG_OFF, TS, __VA_ARGS__); }             \
   } while (0)
 #else /* MW_LOG_ENABLED */
 #define MW_LOG(TS, VL, ...)
