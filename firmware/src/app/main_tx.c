@@ -110,9 +110,9 @@ int main(void) {
       }
 
       // Prepare data for LoRa transmission
-      lora_len =
-          snprintf((char *)lora_buffer, sizeof(lora_buffer),
-                   "T:%.1f,H:%.1f,V:%.3f", temperature, humidity, adc_voltage);
+      lora_len = snprintf((char *)lora_buffer, sizeof(lora_buffer),
+                          "ID:%d,T:%.1f,H:%.1f,V:%.3f",
+                          BOARD_ID, temperature, humidity, adc_voltage);
     }
     if (Scheduler_ShouldTransmit()) {
       UART_Debug_Println("Transmitting...");
