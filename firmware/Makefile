@@ -12,6 +12,7 @@
 MODE ?= TX
 BOARD ?= WIO_E5
 
+
 # CFlags need to declare eariler
 CC = arm-none-eabi-gcc
 OBJCOPY = arm-none-eabi-objcopy
