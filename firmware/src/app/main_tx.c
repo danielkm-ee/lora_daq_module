@@ -110,9 +110,11 @@ int main(void) {
       }
 
       // Prepare data for LoRa transmission
+      uint32_t timestamp = Get_Uptime_Seconds();
+
       lora_len = snprintf((char *)lora_buffer, sizeof(lora_buffer),
-                          "ID:%d,T:%.1f,H:%.1f,V:%.3f",
-                          BOARD_ID, temperature, humidity, adc_voltage);
+                          "ID:%d,T:%lu,TEMP:%.1f,H:%.1f,V:%.3f", BOARD_ID,
+                          timestamp, temperature, humidity, adc_voltage);
     }
     if (Scheduler_ShouldTransmit()) {
       UART_Debug_Println("Transmitting...");
@@ -197,3 +199,5 @@ void Error_Handler(void) {
     UART_Debug_Println("Error occurred! Halting.");
   }
 }
+
+uint32_t Get_Uptime_Seconds(void) { return HAL_GetTick() / 1000; }

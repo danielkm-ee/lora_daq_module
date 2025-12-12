@@ -20,6 +20,7 @@ void LED_Init(void);
 void LED_Blink(uint8_t times, uint32_t delay_ms);
 void LED_On(void);
 void LED_Off(void);
+uint32_t Get_Uptime_Seconds(void);
 
 #ifdef __cplusplus
 }

@@ -9,7 +9,7 @@
 #define LED_GPIO_PIN GPIO_PIN_5
 #define LED_GPIO_CLK_ENABLE() __HAL_RCC_GPIOB_CLK_ENABLE()
 
-#define BOARD_ID  1
+#define BOARD_ID 1
 
 #define I2C_TIMING 0x00702991 // 100kHz @ 48MHz
 
