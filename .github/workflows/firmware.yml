@@ -1,0 +1,51 @@
+name: Firmware CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-firmware:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install ARM toolchain + build tools
+        run: |
+          sudo apt update
+          sudo apt install -y \
+            build-essential \
+            gcc-arm-none-eabi \
+            gdb-multiarch \
+            make
+
+      - name: Build firmware
+        working-directory: firmware
+        run: make
+
+      - name: Upload build artifacts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware-build
+          path: |
+            firmware/build/*.elf
+            firmware/build/*.bin
+
+  format-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install clang-format
+        run: sudo apt update && sudo apt install -y clang-format
+
+      - name: Run formatting check (src + config)
+        run: |
+          FILES=$(find firmware/src firmware/config -type f \( -name '*.c' -o -name '*.h' \))
+          echo "Checking formatting for:"
+          echo "$FILES"
+          clang-format --dry-run --Werror $FILES

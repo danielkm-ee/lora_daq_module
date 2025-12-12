@@ -1,10 +1,28 @@
-write your code here
+# Source Code Structure
 
-#### structure for our project i'd love to use
-put both *.c files and *.h files here, each should be named the same.
+## Modules
 
-ex. say you make a i2c module, title the src and headers i2c.c and i2c.h respectively. this would be the directory with only your new module
-../src/
-	- i2c.c
-	- i2c.h
+- `app/` - Main application
+- `lora/` - LoRa communication
+- `i2c/` - I2C sensors
+- `uart/` - UART interface
+- `power/` - Power management
+- `scheduling/` - Task timing
 
+
+## step up files (Don't Modify)
+Files in `src/` are configuration/setup files required by our chip — do not edit them.
+
+## Adding a Module
+
+1. Create `src/your_module/`
+2. Add `your_module.h` and `your_module.c`
+3. Update Makefile
+4. Test before integrating
+
+## Build
+```bash
+make clean
+make
+make flash
+```
